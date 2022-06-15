@@ -2,8 +2,78 @@
 
 {% block content %}
   <section>
-    <h1>
-      Home Page
-    </h1>
+    <footer id="site-footer">
+      <div class="text-white bg-blue-900 flex flex-col p-[15px]">
+        <div class="py-[30px] ml-[15px]">
+          {% include '_partials/_logo.svg.twig' %}
+        </div>
+        <div>
+          {% for n in [
+            {
+              title: 'Resources',
+              items: [
+                { content: 'SDS & Technical Documents' },
+                { content: 'Case Studies' },
+                { content: 'FAQS' }
+              ]
+            },
+            {
+              title: 'About Us',
+              items: [
+                { content: 'Our Company' },
+                { content: 'News & Press' },
+                { content: 'Careers' }
+              ]
+            },
+            {
+              title: 'Contact',
+              items: [
+                { content: 'Message Us', link: '#' },
+                { content: 'Case Studies', link: '#' },
+                { content: 'FAQS', link: '#' }
+              ]
+            }
+          ] %}
+            <div class="divide-y-2 divide-blue-700 mt-[30px]">
+              <div class="h4">
+                {{ n.title }}
+              </div>
+              <div class="flex flex-col mt-2">
+                <a class="pt-4" href="{{ n.items[0].link }}">
+                  {{ n.items[0].content }}
+                </a>
+                <a class="pt-4" href="{{ n.items[1].link }}">
+                  {{ n.items[1].content }}
+                </a>
+                <a class="pt-4" href="{{ n.items[2].link }}">
+                  {{ n.items[2].content }}
+                </a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="flex flex-col mt-6">
+          {% for c in [
+            { content: 'Privacy Policy' },
+            { content: 'Accessibility Statement' },
+            { content: 'Website by Dative' }
+          ] %}
+            <a href="#" class="py-[6px] text-sm text-blue-300">
+              {{ c.content }}
+            </a>
+          {% endfor %}
+        </div>
+        <div class="flex flex-col items-center">
+          <div>
+            axios logo
+          </div>
+          <div class="text-sm">
+            <span>
+              An <a href="#" class="text-blue-300">Axius Water</a>Company
+            </span>
+          </div>
+        </div>
+      </div>
+    </footer>
   </section>
 {% endblock %}
