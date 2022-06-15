@@ -1,7 +1,105 @@
-<header id="site-header">
-  <div class="bg-white">
-    <h2>
-      site-header
-    </h2>
+{% set arraylinks = [
+  {
+    text: 'MicroC® Products', urls: [
+      {
+        text: 'Why Choose MicroC®?', link: '#'
+      },
+      {
+        text: 'MicroC® 1000', link: '#'
+      },
+      {
+        text: 'MicroC® 1000', link: '#'
+      },
+      {
+        text: 'MicroC® 1000', link: '#'
+      },
+    ]
+  },
+  {
+    text: 'Nitrack® Services', urls: [
+      {
+        text: 'Why Choose MicroC®?', link: '#'
+      },
+      {
+        text: 'MicroC® 1000', link: '#'
+      },
+    ]
+  },
+  {
+    text: 'Contaminants Treated', urls: [
+      {
+        text: "Contaminants Treated", link: "#"
+      }
+    ]
+  },
+  {
+    text: 'Customers Served', urls: [
+      {
+        text: 'Why Choose MicroC®?', link: '#'
+      },
+      {
+        text: 'MicroC® 1000', link: '#'
+      },
+    ]
+  },
+  {
+    text: 'Why EOSi?', urls: [
+      {
+        text: "Why EOSi", link: "#"
+      }
+    ]
+  },
+] %}
+
+<header id='site-header'>
+  <div class='bg-white'>
+    <nav class=' max-w-screen-desktop mx-auto px-[15px] py-[30px]
+    xl:flex xl:justify-between desktop:px-[30px]'>
+      <ul class='flex justify-between items-center'>
+        <li>
+            <a href='/'>
+              {% include '/_partials/_logo.svg.twig' %}
+            </a>
+        </li>
+        <li class='xl:hidden'>
+          <button id='hamburger-menu-button'
+            class='hamburger'
+            type='button'
+            aria-label='Menu'
+            data-toggle-control='site-navigation'
+            aria-expanded='false'>
+            <span class='hamburger-box'>
+              <span class='hamburger-inner'></span>
+            </span>
+          </button>
+        </li>
+      </ul>
+      <div id="site-navigation" class='flex flex-col gap-[18px] mt-[40px]] 
+      xl:mt-0 xl:flex-row xl:gap-[18px]'>
+        <ul class='flex flex-col gap-6 pt-[40px] xl:flex-row xl:pt-0'>
+          {% for item in arraylinks %}
+            {% if item.urls|length > 1 %}
+                {% include '/_partials/_nav_dropdown.twig' with {
+                  links: item
+                } %}
+              {% else %}
+                <li class='flex justify-between items-center'>
+                  <a class='font-normal text-[18px] leading=[25px] 
+                  text-gray-900 pl-[10px] xl:pl-0 xl:font-semibold xl:text-[16px] 
+                  xl:leading-[19px]' href={{item.urls[0].link}}>
+                    {{item.text}}
+                  </a>
+                </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+        <button 
+          class='bg-secondary text-white 
+          font-bold text-[16px] leading-[18px]
+          p-6 rounded-[200px]'>
+            Schedule a Call
+          </button>
+      </div>
+    </nav>
   </div>
 </header>
