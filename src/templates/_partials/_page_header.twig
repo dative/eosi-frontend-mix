@@ -1,15 +1,13 @@
 {% if title is defined and title %}
+  <div>
+    <h1 class="h1">
+      {{ title }}
+    </h1>
 
-<div>
-
-  <h1>{{ title }}</h1>
-
-  {% if intro is defined and intro %}
-    <div>
-      {{ intro }}
-    </div>
-  {% endif %}
-
-</div>
-
+    {% if intro is defined and intro %}
+      <h4 class="py-4 font-light text-gray-700 h4">
+        {{ intro }}
+      </h4>
+    {% endif %}
+  </div>
 {% endif %}
