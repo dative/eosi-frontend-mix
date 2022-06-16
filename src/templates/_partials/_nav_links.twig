@@ -10,13 +10,13 @@ Usage:
 #}
 
 {% if links is defined and links %}
-  <ul class='flex flex-col gap-1 xl:flex-row xl:justify-between xl:items-center'>
+  <ul class='flex flex-col gap-1 xl:flex-row xl:justify-between xl:items-center pt-[30px] xl:pt-0'>
     {% for item in links %}
       {% if item.urls|length > 1 %}
         <li class='relative'>
           <button class='flex justify-between items-center w-full xl:w-auto'>
             <p class='p-[10px] font-normal text-[18px] leading-[140%] text-gray-900
-            xl:font-semibold xl:text-[16px] xl:leading-[19px]'>
+            xl:font-semibold xl:text-[16px] xl:leading-[19px] xl:pr-[5px]'>
               {{item.urls[0].text}}
             </p>
             <span class='arrow-donw-icon'></span>

@@ -3,7 +3,7 @@
     @apply transition-all duration-300 ease-in-out overflow-hidden h-auto max-h-0 xl:max-h-max;
   
     &.active {
-      @apply max-h-[700px] xl:max-h-fit;
+      @apply max-h-full xl:max-h-fit;
     }
   }
 }
