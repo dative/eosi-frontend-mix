@@ -1,7 +1,72 @@
-<header id="site-header">
-  <div class="bg-white">
-    <h2>
-      site-header
-    </h2>
+{% set links = [
+  {
+    urls: [
+      {text: 'MicroC® Products', link: '#'},
+      {text: 'Why Choose MicroC®?', link: '#'},
+      {text: 'MicroC® 1000', link: '#'},
+      {text: 'MicroC® 1000',link: '#'},
+      {text: 'MicroC® 1000', link: '#'},
+    ]
+  },
+  {
+    urls: [
+      {text: 'Nitrack® Services', link: '#'}
+    ]
+  },
+  {
+    urls: [
+      {text: 'Contaminants Treated', link: '#'},
+      {text: 'Industrial', link: '#'},
+      {text: 'Municipal', link: '#'},
+      {text: 'Drinking Water', link: '#'},
+      {text: 'Groundwater Remediation', link: '#'},
+    ]
+  },
+  {
+    urls: [
+      {text: 'Customers Served', link: '#'},
+      {text: 'Nitrogen', link: '#'},
+      {text: 'Phosphorus', link: '#'},
+      {text: 'BOD Addition', link: '#'},
+      {text: 'Selenium', link: '#'},
+    ]
+  },
+  {
+    urls: [
+      {text: 'Why EOSi?', link: '#'}
+    ]
+  }
+] %}
+
+<header id='site-header'>
+  <div class='bg-white'>
+    <div class='max-w-screen-desktop mx-auto px-[15px] py-[30px] 
+    desktop:px-[30px] xl:flex xl:justify-between'>
+      <ul class='flex justify-between items-center'>
+        <li>
+            <a href='/'>
+            {% include '/_partials/_logo.svg.twig' %}
+          </a>
+        </li>
+        <li class='xl:hidden'>
+          <button id='hamburger-menu-button'
+          class='hamburger'
+          type='button'
+          aria-label='Menu'
+          data-toggle-control='site-navigation'
+          aria-expanded='false'>
+            <span class='hamburger-box'>
+              <span class='hamburger-inner'></span>
+            </span>
+          </button>
+        </li>
+      </ul>
+      <div id='site-navigation' class='xl:flex xl:items-center'>
+        {% include "_partials/_nav_links.twig" with {
+          links: links,
+          buttonText: 'Schedule a Call'
+        } %}
+      </div>
+    </div>
   </div>
 </header>

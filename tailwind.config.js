@@ -44,7 +44,11 @@ module.exports = {
         900: "#020304",
       }
     },
-    extend: {},
+    extend: {
+      boxShadow: {
+        'nav-menu': '0px 15px 12px rgba(0, 0, 0, 0.05);'
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),
