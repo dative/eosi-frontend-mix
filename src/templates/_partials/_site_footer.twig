@@ -1,7 +1,7 @@
 <footer id="site-footer">
-  <div class="text-white bg-blue-900 flex flex-col p-[15px]">
+  <div class="text-white bg-blue-900 flex flex-col px-[15px] pb-[30px] lg:pb-0">
     <div class="py-[30px] ml-[15px]">
-      {% include '_partials/_logo.svg.twig' %}
+      {% include '_partials/_logo_white.svg.twig' %}
     </div>
     <div class="flex flex-col lg:flex-row">
       <div class="flex flex-col lg:flex-row">
@@ -31,7 +31,7 @@
             ]
           }
         ] %}
-          <div class="divide-y-2 divide-blue-700 mt-[30px] lg:w-[230px] narrow:w-[300px] desktop:w-[340px] px-4">
+          <div class="divide-y-2 divide-blue-700 mt-[30px] lg:w-[230px] narrow:w-[300px] desktop:w-[340px] lg:px-4">
             <div class="h4">
               {{ n.title }}
             </div>
@@ -51,7 +51,7 @@
       </div>
 
       {# need to discuss that #}
-      <div class="flex flex-col px-4 mt-6 lg:hidden">
+      <div class="flex flex-col lg:px-4 mt-6 lg:hidden">
         {% for c in [
           { content: 'Privacy Policy' },
           { content: 'Accessibility Statement' },

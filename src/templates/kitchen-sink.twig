@@ -1,8 +1,7 @@
 {% extends '_layouts/_base_page_layout.twig' %}
 
-
 {% block pageHeader %}
-  {% include "_partials/_page_header.twig" with {
+  {% include '_partials/_page_header.twig' with {
     title: 'Kitchen Sink',
     intro: '<p>Learn how our proven process can help your meet and maintain your wastewater treatment goals consistently and cost-effectively.</p>'
   } %}
@@ -16,7 +15,8 @@
 
 {% block pageSidebar %}
   <div class="min-w-[276px]">
-    <div class="p-4 bg-gray-300 h-72">[ Sidebar ]</div>
+    <div class="p-4 bg-gray-300 h-72">
+      [ Sidebar ]
+    </div>
   </div> {# <- this is an partial #}
 {% endblock %}
-
