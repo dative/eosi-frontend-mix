@@ -1,0 +1,55 @@
+{#
+Nav links partial
+Usage:
+
+{% include "_partials/_nav_links.twig" with {
+  links: links,
+  buttonText: 'Schedule a Call'
+} %}
+
+#}
+
+{% if links is defined and links %}
+  <ul class='flex flex-col gap-1 xl:flex-row xl:justify-between xl:items-center'>
+    {% for item in links %}
+      {% if item.urls|length > 1 %}
+        <li class='relative'>
+          <button class='flex justify-between items-center w-full xl:w-auto'>
+            <p class='p-[10px] font-normal text-[18px] leading-[140%] text-gray-900
+            xl:font-semibold xl:text-[16px] xl:leading-[19px]'>
+              {{item.urls[0].text}}
+            </p>
+            <span class='arrow-donw-icon'></span>
+          </button>
+          <ul class='hidden flex-col p-[10px] 
+          xl:fixed xl:bg-white xl:rounded-b-md
+          xl:shadow-nav-menu xl:pt-0'> <!-- Active on clink -->
+            {% for item in item.urls %}
+              <li class='first:hidden p-[10px] font-normal text-[18px] 
+              leading-[25px] text-blue-700 border-l-[2px] border-l-blue-300
+              xl:border-none xl:text-[16px] xl:leading-[18px] xl:text-gray-900'>
+                <a href={{item.link}}>{{item.text}}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+        {% else %}
+          <li class='p-[10px]'>
+            <a href={{item.urls[0].link}} class='font-normal text-[18px] leading-[140%] text-gray-900
+            xl:font-semibold xl:text-[16px] xl:leading-[19px]'>
+              {{item.urls[0].text}}
+            </a>
+          </li>
+      {% endif %}
+    {% endfor %}
+    {% if buttonText is defined and buttonText %}
+      <li>
+        <button type='button' class='bg-secondary w-full text-white 
+        font-bold text-[16px] leading-[18px]
+        p-6 rounded-[200px]'>
+          {{buttonText}}
+        </button>
+      </li>
+    {% endif %}
+  </ul>
+{% endif %}
