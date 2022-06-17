@@ -1,0 +1,20 @@
+@layer components {
+  .accordion {
+    button {
+      @apply flex items-center gap-[10px] w-full p-[15px] bg-gray-100 rounded-md
+      font-medium text-[18px] leading-[32px] text-gray-900;
+    }
+
+    [data-toggle-control=""][aria-expanded=false] + * {
+      @apply hidden;
+    }
+
+    [data-toggle-control=""][aria-expanded=true] span {
+      @apply rotate-45;
+    }
+
+    .redactor {
+      @apply flex flex-col gap-[50px] p-[15px];
+    }
+  }
+}

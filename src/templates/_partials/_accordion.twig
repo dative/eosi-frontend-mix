@@ -1,0 +1,26 @@
+{#
+
+Accordion partial component
+Usage:
+
+{% include "_partials/_accordion.twig" with {
+  heading: "Accordion Heading",
+  contents: "<p>Your Markup</p>"
+} %}
+
+#}
+
+{% if heading is defined and heading and contents is defined and contents %}
+  <div class='accordion'>
+    <button
+      type='button'
+      aria-expanded="false"
+      data-toggle-control>
+      <span class='plus-circle-icon'></span>
+      {{ heading }}
+    </button>
+    <div class='redactor'>
+      {{ contents }}
+    </div>
+  </div>
+{% endif %}

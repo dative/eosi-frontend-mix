@@ -1,9 +1,57 @@
-{% extends '_layouts/_generic_page_layout.twig' %}
+{% extends '_layouts/_base_page_layout.twig' %}
 
-{% block content %}
-  <section>
-    <h1>
-      FAQs Page
-    </h1>
+{% set accordions = [
+  {
+    heading: 'Are any of the MicroC® products NSF certified?', 
+    contents: '<p>Paragraph content</p><p>Paragraph content</p>'
+  },
+  {
+    heading: 'Are there any other compounds in MicroC® products?', 
+    contents: '<p>Paragraph content</p><p>Paragraph content</p>'
+  },
+  {
+    heading: 'Do I have to dilute MicroC® products to feed to my process?', 
+    contents: '<p>Paragraph content</p><p>Paragraph content</p>'
+  },
+  {
+    heading: 'Does EOSi provide technical or application support for their products?', 
+    contents: '<p>Paragraph content</p><p>Paragraph content</p>'
+  },
+  {
+    heading: 'How can I obtain (M)SDS for MicroC® products? ', 
+    contents: '<p>Paragraph content</p><p>Paragraph content</p>'
+  }
+] %}
+
+{% block pageHeader %}
+  {% include '_partials/_page_header.twig' with {
+    title: 'Frequently Asked Questions',
+    intro: '<p>Information and answered to the most common questions that we get about EOSi, MicroC® and our services.</p>'
+  } %}
+{% endblock %}
+
+{% block pageContent %}
+  <section class='flex flex-col gap-[48px]'>
+  
+    {% include '_partials/_page_header.twig' with {
+      title: 'We’re here to help.',
+      intro: '<p>Browse the resources below for our most common questions. If you don’t see what you’re looking for, please <a href="#">contact us</a> for further assistance.</p>'
+    } %}
+
+    <div class='flex flex-col gap-6'>
+      {% for accordion in accordions %}
+        {% include "_partials/_accordion.twig" with {
+        heading: accordion.heading,
+        contents: accordion.contents
+      } %}
+      {% endfor %}
+    </div>
   </section>
+{% endblock %}
+
+{% block pageSidebar %}
+{% endblock %}
+
+{% block pageFooter %}
+  CTA goes here
 {% endblock %}
