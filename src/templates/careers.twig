@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block pageContent %}
-  <div class="py-4">
+  <div>
     {% for blogContent in [
       {
         date: 'Feb 20, 2022',
@@ -29,5 +29,5 @@
 {% endblock %}
 
 {% block pageFooter %}
-  CTA goes here
+  {% include '_partials/_cta.twig' %}
 {% endblock %}

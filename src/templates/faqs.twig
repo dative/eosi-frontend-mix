@@ -2,23 +2,23 @@
 
 {% set accordions = [
   {
-    heading: 'Are any of the MicroC® products NSF certified?', 
+    heading: 'Are any of the MicroC® products NSF certified?',
     contents: '<p>Paragraph content</p>'
   },
   {
-    heading: 'Are there any other compounds in MicroC® products?', 
+    heading: 'Are there any other compounds in MicroC® products?',
     contents: '<p>Paragraph content</p>'
   },
   {
-    heading: 'Do I have to dilute MicroC® products to feed to my process?', 
+    heading: 'Do I have to dilute MicroC® products to feed to my process?',
     contents: '<p>Paragraph content</p>'
   },
   {
-    heading: 'Does EOSi provide technical or application support for their products?', 
+    heading: 'Does EOSi provide technical or application support for their products?',
     contents: '<p>Paragraph content</p>'
   },
   {
-    heading: 'How can I obtain (M)SDS for MicroC® products? ', 
+    heading: 'How can I obtain (M)SDS for MicroC® products? ',
     contents: '<p>Paragraph content</p>'
   }
 ] %}
@@ -46,7 +46,7 @@
       <p>Browse the resources below for our most common questions. If you don’t see what you’re looking for, please contact us for further assistance.</p>
     </article>
 
-    <!-- can be a block? --> 
+    <!-- can be a block? -->
     <div class='flex flex-col gap-6'>
       {% for accordion in accordions %}
         {% include "_partials/_accordion.twig" with {
@@ -63,5 +63,5 @@
 {% endblock %}
 
 {% block pageFooter %}
-  CTA goes here
+  {% include '_partials/_cta.twig' %}
 {% endblock %}
