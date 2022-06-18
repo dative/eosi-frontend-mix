@@ -23,6 +23,10 @@
   }
 ] %}
 
+{% set articleText %}
+  <p>Browse the resources below for our most common questions. If you don’t see what you’re looking for, please contact us for further assistance.</p>
+{% endset %}
+
 {% block pageHeader %}
   {% include '_partials/_page_header.twig' with {
     title: 'Frequently Asked Questions',
@@ -32,12 +36,17 @@
 
 {% block pageContent %}
   <section class='flex flex-col gap-[48px]'>
-  
-    {% include '_partials/_page_header.twig' with {
-      title: 'We’re here to help.',
-      intro: '<p>Browse the resources below for our most common questions. If you don’t see what you’re looking for, please <a href="#">contact us</a> for further assistance.</p>'
-    } %}
 
+    <!-- can be a partial? -->
+    <article class='redactor flex flex-col gap-[20px]'>
+      {% include "_partials/_heading.twig" with {
+        text: 'We’re here to help.',
+        htag: 'h2'
+      } %}
+      <p>Browse the resources below for our most common questions. If you don’t see what you’re looking for, please contact us for further assistance.</p>
+    </article>
+
+    <!-- can be a block? --> 
     <div class='flex flex-col gap-6'>
       {% for accordion in accordions %}
         {% include "_partials/_accordion.twig" with {
@@ -46,6 +55,7 @@
       } %}
       {% endfor %}
     </div>
+
   </section>
 {% endblock %}
 
