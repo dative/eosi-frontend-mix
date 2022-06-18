@@ -2,7 +2,7 @@
   .accordion {
     button {
       @apply flex items-center gap-x-[16px] bg-gray-100 w-full p-[15px] rounded-md
-      text-start text-[18px] xl:leading-[32px];
+      text-start text-[18px] xl:leading-[32px] text-gray-900;
     }
 
     [data-toggle-control=""][aria-expanded=false] + * {

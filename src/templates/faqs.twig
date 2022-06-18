@@ -23,10 +23,6 @@
   }
 ] %}
 
-{% set articleText %}
-  <p>Browse the resources below for our most common questions. If you don’t see what you’re looking for, please contact us for further assistance.</p>
-{% endset %}
-
 {% block pageHeader %}
   {% include '_partials/_page_header.twig' with {
     title: 'Frequently Asked Questions',
@@ -43,7 +39,7 @@
         text: 'We’re here to help.',
         htag: 'h2'
       } %}
-      <p>Browse the resources below for our most common questions. If you don’t see what you’re looking for, please contact us for further assistance.</p>
+      <p>Browse the resources below for our most common questions. If you don’t see what you’re looking for, please <a href='#' class='font-bold text-blue-700'>contact us</a> for further assistance.</p>
     </article>
 
     <!-- can be a block? -->
