@@ -1,0 +1,11 @@
+{% set htag = htag|default('h2') %}
+{% if (htag|lower) in ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] %}
+  {% set headingTag %}
+    <TAG class={{htag}}>
+      {{ text|default('[heading prop missing]') }}
+    </TAG>
+  {% endset %}
+  {{ headingTag|replace({ TAG: htag })|raw }}
+{% else %}
+  Error: htag must be one of the following: h1, h2, h3, h4, h5, h6
+{% endif %}
