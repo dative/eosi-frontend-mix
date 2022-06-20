@@ -32,15 +32,10 @@
 
 {% block pageContent %}
   <section class='flex flex-col gap-[48px]'>
-
-    <!-- can be a partial? -->
-    <article class='redactor flex flex-col gap-[20px]'>
-      {% include "_partials/_heading.twig" with {
-        text: 'We’re here to help.',
-        htag: 'h2'
-      } %}
-      <p>Browse the resources below for our most common questions. If you don’t see what you’re looking for, please <a href='#' class='font-bold text-blue-700'>contact us</a> for further assistance.</p>
-    </article>
+    {% include "_partials/_page_article.twig" with {
+      heading: 'We’re here to help.',
+      contents: '<p>Browse the resources below for our most common questions. If you don’t see what you’re looking for, please <a href="#" class="font-bold text-blue-700">contact us</a> for further assistance.</p>'
+    } %}
 
     <!-- can be a block? -->
     <div class='flex flex-col gap-6'>

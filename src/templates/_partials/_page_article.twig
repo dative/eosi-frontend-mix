@@ -1,0 +1,13 @@
+{% if 
+  heading is defined 
+  and heading 
+  and contents is defined 
+  and contents %}
+  <article class='redactor flex flex-col gap-[20px]'>
+    {% include "_partials/_heading.twig" with {
+      text: 'We’re here to help.',
+      htag: htag
+    } %}
+    {{ contents }}
+  </article>
+{% endif %}
