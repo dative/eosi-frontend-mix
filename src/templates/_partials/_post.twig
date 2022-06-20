@@ -1,35 +1,31 @@
 {% if
-  entry is defined
-    and entry
-    and entry.date is defined
-    and entry.date
-    and entry.title is defined
-    and entry.title %}
+  date is defined
+  and date
+  and title is defined
+  and title
+  and link is defined
+  and link %}
   <div class="border-b border-gray-300 last:border-none">
     <div>
       <time class='text-base leading-[19px] py-2 text-gray-700 font-semibold' 
-        datetime="{{ entry.date }}">
-        {{ entry.date }}
+        datetime="{{ date }}">
+        {{ date }}
       </time>
     </div>
   
-    <a href="{{ entry.btnLink }}" class='text-blue-700 h3'>
-      {{ entry.title }}
+    <a href="{{ link }}" class='text-blue-700 h3'>
+      {{ title }}
     </a>
 
-    {% if entry.description is defined and entry.description %}
+    {% if description is defined and description %}
       <p class="leading-8 text-gray-700 p">
-        {{ entry.description }}
+        {{ description }}
       </p>
     {% endif %}
 
-    {% if entry.btnText is defined and entry.btnText and entry.btnLink is defined and entry.btnLink %}
-      <a href="{{ entry.btnLink }}"
-        class="btn-outline-white mt-[30px] mb-12">
-        <span class="text-lg font-semibold leading-[21px] text-blue-700">
-          {{ entry.btnText }}
-        </span>
-      </a>
-    {% endif %}
+    <a href="{{ link }}"
+      class="btn-outline-blue mt-[30px] mb-12">
+      Learn More
+    </a>
   </div>
 {% endif %}
