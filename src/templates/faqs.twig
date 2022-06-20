@@ -1,5 +1,10 @@
 {% extends '_layouts/_base_page_layout.twig' %}
 
+{% set pageArticle %}
+  <h2>We’re here to help.</h2>
+  <p>Browse the resources below for our most common questions. If you don’t see what you’re looking for, please <a href='' class='font-bold text-blue-700'>contact us</a> for further assistance.</p>
+{% endset %}
+
 {% set accordions = [
   {
     heading: 'Are any of the MicroC® products NSF certified?',
@@ -32,13 +37,18 @@
 
 {% block pageContent %}
   <section class='flex flex-col gap-[48px]'>
-    {% include "_partials/_page_article.twig" with {
-      heading: 'We’re here to help.',
-      contents: '<p>Browse the resources below for our most common questions. If you don’t see what you’re looking for, please <a href="#" class="font-bold text-blue-700">contact us</a> for further assistance.</p>'
+
+    {% include "_blocks/_richText.twig" with {
+      blk: {
+        contents: pageArticle
+      }
     } %}
 
-    {% include "_blocks/_accordions.twig" with {blocks: accordions} %}
-
+    {% include "_blocks/_accordions.twig" with {
+      blk: {
+        accordions: accordions
+      }
+    } %}
   </section>
 {% endblock %}
 
