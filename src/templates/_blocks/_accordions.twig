@@ -1,0 +1,10 @@
+{% if blocks is defined and blocks %}
+  <div class='flex flex-col gap-6'>
+    {% for blk in blocks %}
+      {% include "_partials/_accordion.twig" with {
+      heading: blk.heading,
+      contents: blk.contents
+    } %}
+    {% endfor %}
+  </div>
+{% endif %}

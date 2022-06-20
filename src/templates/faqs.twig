@@ -37,15 +37,7 @@
       contents: '<p>Browse the resources below for our most common questions. If you don’t see what you’re looking for, please <a href="#" class="font-bold text-blue-700">contact us</a> for further assistance.</p>'
     } %}
 
-    <!-- can be a block? -->
-    <div class='flex flex-col gap-6'>
-      {% for accordion in accordions %}
-        {% include "_partials/_accordion.twig" with {
-        heading: accordion.heading,
-        contents: accordion.contents
-      } %}
-      {% endfor %}
-    </div>
+    {% include "_blocks/_accordions.twig" with {blocks: accordions} %}
 
   </section>
 {% endblock %}
