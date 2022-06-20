@@ -9,28 +9,42 @@
 
 {% block pageContent %}
   <div>
-    {% for blogContent in [
-      {
+    {% include '_partials/_entry_post.twig' with {
+      entry: {
         date: 'Feb 20, 2022',
         title: 'Axius Water 2020 Sustainability Overview',
         description: 'Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.',
-        btnText: 'Learn More'
-      },
-      {
-        date: 'Feb 20, 2022',
-        title: 'Axius Water 2020 Sustainability Overview',
-        description: 'Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.',
-        btnText: 'Learn More'
-      },
-      {
-        date: 'Feb 20, 2022',
-        title: 'Axius Water 2020 Sustainability Overview',
-        description: 'Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.',
-        btnText: 'Learn More'
+        btnText: 'Learn More',
+        btnLink: '#'
       }
-    ] %}
-      {% include '_partials/_blog_post.twig' with { blog: blogContent } %}
-    {% endfor %}
+    } %}
+    {% include '_partials/_entry_post.twig' with {
+      entry: {
+        date: 'Feb 20, 2022',
+        title: 'Axius Water 2020 Sustainability Overview',
+        description: 'Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.',
+        btnText: 'Learn More',
+        btnLink: '#'
+      }
+    } %}
+    {% include '_partials/_entry_post.twig' with {
+      entry: {
+        date: 'Feb 20, 2022',
+        title: 'Axius Water 2020 Sustainability Overview',
+        description: 'Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.',
+        btnText: 'Learn More',
+        btnLink: '#'
+      }
+    } %}
+    {% include '_partials/_entry_post.twig' with {
+      entry: {
+        date: 'Feb 20, 2022',
+        title: 'Axius Water 2020 Sustainability Overview',
+        description: 'Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.',
+        btnText: 'Learn More',
+        btnLink: '#'
+      }
+    } %}
   </div>
 {% endblock %}
 
