@@ -1,0 +1,17 @@
+{% if 
+  blk is defined 
+  and blk 
+  and blk.posts is defined
+  and blk.posts %}
+  {% for post in blk.posts %}
+    {% include '_partials/_post.twig' with {
+      entry: {
+        date: post.date,
+        title: post.title,
+        description: post.description,
+        btnText: post.btnText,
+        btnLink: post.btnLink
+      }
+    } %}
+  {% endfor %}
+{% endif %}

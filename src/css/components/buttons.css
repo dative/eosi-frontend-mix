@@ -11,8 +11,13 @@
   .btn-solid {
     @apply btn-base border-secondary bg-secondary text-white hover:bg-secondary/90 hover:border-secondary/90;
   }
+  
 
   .btn-outline {
     @apply btn-base text-secondary border-secondary hover:bg-secondary hover:text-white;
+  }
+
+  .btn-outline-white {
+    @apply btn-base px-8 py-4 border-blue-700 hover:bg-white;
   }
 }

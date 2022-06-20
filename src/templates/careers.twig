@@ -1,5 +1,23 @@
 {% extends '_layouts/_base_page_layout.twig' %}
 
+
+{% set careersPosts = [
+  {
+    date: 'Feb 20, 2022',
+    title: 'Position Title',
+    description: 'Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.',
+    btnText: 'Learn More',
+    btnLink: '#'
+  },
+  {
+    date: 'Feb 20, 2022',
+    title: 'Position Title',
+    description: 'Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.',
+    btnText: 'Learn More',
+    btnLink: '#'
+  }
+] %}
+
 {% block pageHeader %}
   {% include '_partials/_page_header.twig' with {
     title: 'Careers',
@@ -8,26 +26,13 @@
 {% endblock %}
 
 {% block pageContent %}
-  <div>
-    {% include '_partials/_entry_post.twig' with {
-      entry: {
-        date: 'Feb 20, 2022',
-        title: 'Position Title',
-        description: 'Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.',
-        btnText: 'Learn More',
-        btnLink: '#'
+  <section class='flex flex-col gap-8'>
+    {% include "_blocks/_entry_posts.twig" with {
+      blk: {
+        posts: careersPosts
       }
     } %}
-    {% include '_partials/_entry_post.twig' with {
-      entry: {
-        date: 'Feb 20, 2022',
-        title: 'Position Title',
-        description: 'Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.',
-        btnText: 'Learn More',
-        btnLink: '#'
-      }
-    } %}
-  </div>
+  </section>
 {% endblock %}
 
 {% block pageFooter %}
