@@ -14,6 +14,11 @@ body {
   @apply bg-gray-300;
 }
 
+ul li::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  @apply self-center px-4 font-bold text-blue-700 list-outside;
+}
+
 @layer components {
   .page-header-bg {
     @apply bg-gray-50 pt-[30px];

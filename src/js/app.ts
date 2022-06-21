@@ -1,1 +1,2 @@
-import "./toggle-control-button"
+import './toggle-control-button'
+import './sds-handler'
