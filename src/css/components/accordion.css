@@ -10,7 +10,7 @@
     }
 
     summary {
-      @apply flex items-center gap-x-[10px] list-none bg-gray-100;
+      @apply flex items-center gap-x-[10px] list-none bg-gray-100 cursor-pointer;
     }
 
     summary::before {
