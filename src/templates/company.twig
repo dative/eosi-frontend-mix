@@ -1,9 +1,60 @@
-{% extends '_layouts/_generic_page_layout.twig' %}
+{% extends '_layouts/_base_page_layout.twig' %}
 
-{% block content %}
-  <section>
-    <h1>
-      Company Page
-    </h1>
+{% set pageIntro %}
+  <p>Environmental Operating Solutions, Inc. (EOSi) provides biological contaminant-removal solutions, supplies, and technical services empowering water and wastewater treatment plant operators in their mission to deliver treated effluent water free of harmful nutrient pollution and chemical contaminants.</p>
+  <p>EOSi’s renewable and non-hazardous product chemistries, full-service process monitoring and control programs, and on-time delivery and no-disruption supply chain are backed by our world-class team of technical experts — each personally dedicated to protecting and preserving our global water resources by reducing the threat of nutrient pollution.</p>
+{% endset %}
+
+{% set leadership = [
+  {
+    fullName: 'Firstname Lastname',
+    description: 'Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.',
+    profilePicture: 'https://picsum.photos/id/1/174/171'
+  },
+  {
+    fullName: 'Firstname Lastname',
+    description: 'Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.',
+    profilePicture: 'https://picsum.photos/id/2/174/171'
+  },
+  {
+    fullName: 'Firstname Lastname',
+    description: 'Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.',
+    profilePicture: 'https://picsum.photos/id/3/174/171'
+  }
+] %}
+
+{% block pageHeader %}
+  {% include '_partials/_page_header.twig' with {
+    title: 'About EOSi',
+    intro: 'Empowering Clean Water® since 1998.'
+  } %}
+{% endblock %}
+
+{% block pageContent %}
+  <section class='flex flex-col gap-12'>
+    {% include "_blocks/_richText.twig" with {
+      blk: {
+        contents: pageIntro
+      }
+    } %}
+
+    {% include "_blocks/_richText.twig" with {
+      blk: {
+        contents: '<h3>Leadership</h3>'
+      }
+    } %}
+
+    {% include "_blocks/_profiles.twig" with {
+      blk: {
+        profiles: leadership
+      }
+    } %}
   </section>
+{% endblock %}
+
+{% block pageSidebar %}
+{% endblock %}
+
+{% block pageFooter %}
+  {% include "_partials/_cta.twig" %}
 {% endblock %}

@@ -1,0 +1,9 @@
+{% if blk is defined and blk and blk.profiles is defined and blk.profiles %}
+  {% for profile in blk.profiles %}
+    {% include "_partials/_profile_item.twig" with {
+      fullName: profile.fullName,
+      description: profile.description,
+      profilePicture: profile.profilePicture
+    } %}
+  {% endfor %}
+{% endif %}

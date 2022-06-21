@@ -1,0 +1,15 @@
+{% if fullName is defined and fullName and description is defined and description %}
+  <div class='flex flex-col sm:flex-row lg:items-center gap-[30px]'>
+    <picture>
+      {% if profilePicture is defined and profilePicture %}
+        <img src={{ profilePicture }} class='rounded-lg max-w-none'/>
+        {% else %}  
+        <img src='https://placeholder.pics/svg/348x342px' class='rounded-lg max-w-none'/>
+      {% endif %}
+    </picture>
+    <div class='redactor flex flex-col gap-2'>
+      <h4>{{ fullName }}</h4>
+      <p>{{ description }}</p>
+    </div>
+  </div>
+{% endif %}
