@@ -1,5 +1,13 @@
 {% if title is defined and title %}
   <div class="redactor flex flex-col gap-4 py-[30px] lg:py-[32px]">
+
+    {% if postDate is defined and postDate %}
+      <time class='text-base leading-[19px] py-2 text-gray-700 font-semibold' 
+        datetime="{{ postDate }}">
+        {{ postDate }}
+      </time>
+    {% endif %}
+
     {% include "_partials/_heading.twig" with {
       text: title,
       htag: 'h1'
