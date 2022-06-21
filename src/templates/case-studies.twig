@@ -1,9 +1,58 @@
-{% extends '_layouts/_generic_page_layout.twig' %}
+{% extends '_layouts/_base_page_layout.twig' %}
 
-{% block content %}
-  <section>
-    <h1>
-      Case Studies Page
-    </h1>
+{% set cards = [
+  {
+    heading: 'Beef Processing Facility',
+    description: 'EOSi Assists Meat Processing Facility During Commissioning of a BNR Upgrade to Address Multiple Process Challenges and to Meet Compliance Goals.',
+    coverPicture: 'https://picsum.photos/id/0/378/275',
+    link: '#'
+  },
+  {
+    heading: 'Beef Processing Facility',
+    description: 'EOSi Assists Meat Processing Facility During Commissioning of a BNR Upgrade to Address Multiple Process Challenges and to Meet Compliance Goals.',
+    coverPicture: 'https://picsum.photos/id/0/378/275',
+    link: '#'
+  },
+  {
+    heading: 'Beef Processing Facility',
+    description: 'EOSi Assists Meat Processing Facility During Commissioning of a BNR Upgrade to Address Multiple Process Challenges and to Meet Compliance Goals.',
+    link: '#'
+  },
+  {
+    heading: 'Beef Processing Facility',
+    description: 'EOSi Assists Meat Processing Facility During Commissioning of a BNR Upgrade to Address Multiple Process Challenges and to Meet Compliance Goals.',
+    coverPicture: 'https://picsum.photos/id/0/378/275',
+    link: '#'
+  },
+  {
+    heading: 'Beef Processing Facility',
+    description: 'EOSi Assists Meat Processing Facility During Commissioning of a BNR Upgrade to Address Multiple Process Challenges and to Meet Compliance Goals.',
+    link: '#'
+  },
+] %}
+
+{% block pageHeader %}
+  {% include '_partials/_page_header.twig' with {
+    title: 'Case Studies',
+    intro: 'See how we’ve helped facilities achieve permit compliance and optimize their nutrient removal process.'
+  } %}
+{% endblock %}
+
+{% block pageContent %}
+
+  <section class='flex flex-col gap-12'>
+    {% include "_blocks/_cards.twig" with {
+      blk: {
+        cards: cards
+      }
+    } %}
   </section>
+  
+{% endblock %}
+
+{% block pageSidebar %}
+{% endblock %}
+
+{% block pageFooter %}
+  {% include '_partials/_cta.twig' %}
 {% endblock %}
