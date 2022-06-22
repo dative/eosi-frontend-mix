@@ -1,9 +1,30 @@
-{% extends '_layouts/_generic_page_layout.twig' %}
+{% extends '_layouts/_base_page_layout.twig' %}
 
-{% block content %}
+{% set pageIntro %}
+  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum.</p>
+  <p>Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+{% endset %}
+
+{% block pageHeader %}
+  {% include '_partials/_page_header.twig' with {
+    title: 'Beef Processing Facility',
+    intro: 'EOSi Assists Meat Processing Facility During Commissioning of a BNR Upgrade to Address Multiple Process Challenges and to Meet Compliance Goals '
+  } %}
+{% endblock %}
+
+{% block pageContent %}
   <section>
-    <h1>
-      Case Study Form Page
-    </h1>
+    {% include "_blocks/_richText.twig" with {
+      blk: {
+        contents: pageIntro
+      }
+    } %}
   </section>
+{% endblock %}
+
+{% block pageSidebar %}
+  {% include "_partials/_case-study-form.twig" %}
+{% endblock %}
+
+{% block pageFooter %}
 {% endblock %}
