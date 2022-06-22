@@ -3,13 +3,13 @@
     <picture>
       {% if profilePicture is defined and profilePicture %}
         <img src={{ profilePicture }} class='rounded-lg max-w-none'/>
-        {% else %}  
+        {% else %}
         <img src='https://placeholder.pics/svg/348x342px' class='rounded-lg max-w-none'/>
       {% endif %}
     </picture>
     <div class='redactor flex flex-col gap-2'>
       <h4>{{ fullName }}</h4>
-      <p>{{ description }}</p>
+      <p class="text-gray-700">{{ description }}</p>
     </div>
   </div>
 {% endif %}

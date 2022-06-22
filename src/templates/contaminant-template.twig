@@ -1,9 +1,26 @@
-{% extends '_layouts/_generic_page_layout.twig' %}
+{% extends '_layouts/_base_page_layout.twig' %}
 
-{% block content %}
-  <section>
-    <h1>
-      Contaminant Page
-    </h1>
-  </section>
+{% block pageHeader %}
+  {% include '_partials/_page_header.twig' with {
+    title: 'Nitrogen Removal',
+    intro: '<p>EOSi’s MicroC® products were originally developed to help wastewater treatment systems remove nitrogen.</p>'
+  } %}
+{% endblock %}
+
+{% block pageContent %}
+  <div class="p-4 bg-gray-300 h-96">
+    [ Content (Content Blocks) ] {# <- this is an partial #}
+  </div>
+{% endblock %}
+
+{% block pageSidebar %}
+  <div class="min-w-[276px]">
+    <div class="p-4 bg-gray-300 h-72">
+      [ Sidebar ]
+    </div>
+  </div> {# <- this is an partial #}
+{% endblock %}
+
+{% block pageFooter %}
+  CTA goes here
 {% endblock %}
