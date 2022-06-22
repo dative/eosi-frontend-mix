@@ -1,9 +1,101 @@
-{% extends '_layouts/_generic_page_layout.twig' %}
+{% extends '_layouts/_base_page_layout.twig' %}
 
-{% block content %}
-  <section>
-    <h1>
-      MicroC Page
-    </h1>
-  </section>
+{% set cards = [
+  {
+    heading: 'Cost Effective',
+    description: 'Measured dollar per pound of contaminant removed, MicroC products consistently deliver the most cost-effective carbon sources available in the industry.',
+    coverPicture: 'img/cover-pc.svg',
+    link: '#'
+  },
+  {
+    heading: 'Consistent Quality',
+    description: 'MicroC products undergo rigorous quality assurance and quality control programs and multiple inspections to assure product reliability, consistency, and superior performance.',
+    coverPicture: 'img/cover-quality.svg',
+    link: '#'
+  },
+  {
+    heading: 'Industry Validated',
+    description: 'MicroC products are in active use at more than 550 plants in North America, and approved by all leading equipment and process suppliers, consultants, and academic institutions.',
+    coverPicture: 'img/cover-industry.svg',
+    link: '#'
+  }
+] %}
+
+{% block pageHeader %}
+	{% include '_partials/_page_header.twig' with {
+    title: 'Why Choose MicroC®?',
+    intro: 'Achieve your contaminant-removal goals for wastewater biological treatment systems and biochemical oxygen demand (BOD) augmentation with MicroC® Premium Carbon Sources.   '
+  } %}
+{% endblock %}
+
+{% block pageContent %}
+	<section>
+		<div class="mt-8 redactor">
+			{% include "_blocks/_cards.twig" with {
+        blk: {
+          cards: cards
+        }
+      } %}
+
+			<div class="flex flex-col lg:flex-row  gap-[30px] py-[60px]">
+				<div class="flex self-center">{% include "_partials/_leaf_icon.svg.twig" %}</div>
+				<div class="flex flex-col gap-2 text-center lg:text-start">
+					<h4>And we’re eco-sustainable!</h4>
+					<p class='font-normal !text-base !text-gray-700'>MicroC products enjoy a USDA BioPreferred designation — biodegradable and “green” by-products and co-products mostly derived from abundant and renewable resources produced in the USA and from other industries.</p>
+				</div>
+			</div>
+			<div class="flex flex-wrap w-full h-auto  gap-[30px] gap-y-[60px]">
+				<div class="flex flex-col w-[580px] gap-6">
+					<div class="bg-secondary h-1  rounded-[10px]"></div>
+					<div>
+						<h3>MicroC® 1000</h3>
+						<p class="font-normal !text-base !text-gray-700 mt-2">
+							<b>Carbohydrate-based</b>
+							and nonhazardous MicroC® 1000 products are best suited for small municipal, package/decentralized and commercial/residential wastewater treatment facilities.</p>
+					</div>
+					<a href="#" class="btn-outline-blue w-[196px] h-[50px]">
+						<span class="text-lg leading-[21.15px] ">Product Details</span>
+					</a>
+				</div>
+				<div class="flex flex-col w-[580px] gap-6">
+					<div class="bg-emphasis h-1  rounded-[10px]"></div>
+					<div>
+						<h3>MicroC® 2000</h3>
+						<p class="font-normal !text-base !text-gray-700 mt-2">
+							<b>Glycerin-based</b>
+							MicroC 2000 series products are the most cost-effective non-hazardous carbon sources on the market.</p>
+					</div>
+					<a href="#" class="btn-outline-blue w-[196px] h-[50px]">
+						<span class="text-lg leading-[21.15px] ">Product Details</span>
+					</a>
+				</div>
+				<div class="flex flex-col w-[580px] gap-6">
+					<div class="bg-red h-1  rounded-[10px]"></div>
+					<div>
+						<h3>MicroC® 3000</h3>
+						<p class="font-normal !text-base !text-gray-700 mt-2">
+							<b>Alcohol-based</b>
+							MicroC® 3000 series products are best suited for municipal and industrial wastewater treatment plants seeking to enhance performance and save money by avoiding using pure methanol.</p>
+					</div>
+					<a href="#" class="btn-outline-blue w-[196px] h-[50px]">
+						<span class="text-lg leading-[21.15px] ">Product Details</span>
+					</a>
+				</div>
+				<div class="flex flex-col w-[580px] gap-6">
+					<div class="bg-purple h-1  rounded-[10px]"></div>
+					<div>
+						<h3>MicroC® 4000</h3>
+						<p class="font-normal !text-base !text-gray-700 mt-2">Custom formulations for sensitive and/or specialized applications, MicroC® 4000 series products are used in applications involving selenium removal, drinking water contaminant removal, perchlorate removal, and more.</p>
+					</div>
+					<a href="#" class="btn-outline-blue w-[196px] h-[50px]">
+						<span class="text-lg leading-[21.15px] ">Product Details</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+
+{% block pageFooter %}
+	{% include '_partials/_cta.twig' %}
 {% endblock %}
