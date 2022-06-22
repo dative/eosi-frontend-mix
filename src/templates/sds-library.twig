@@ -1,0 +1,57 @@
+{% extends '_layouts/_base_page_layout.twig' %}
+
+{% set libraryOne %}
+  <h2>Safety Data Sheets</h2>
+  <ul>
+   <li class='text-blue-700 p'>
+      <a href="#">MicroC® 1000 Safety Data Sheet (SDS)</a>
+    </li>
+    <li class='text-blue-700 p'>
+      <a href="#">MicroC® 2000 Safety Data Sheet (SDS)</a>
+    </li>
+    <li class='text-blue-700 p'>
+      <a href="#">MicroC® 3000 Safety Data Sheet (SDS)</a>
+    </li>
+    <li class='text-blue-700 p'>
+      <a href="#">MicroC® 4000 Safety Data Sheet (SDS)</a>
+    </li>
+  </ul>
+{% endset %}
+
+{% set libraryTwo %}
+  <h2>Product & Company Information</h2>
+  <ul>
+    <li class='text-blue-700 p'>
+      <a href="#">MicroC® 1000 Product Brochure</a>
+    </li>
+    <li class='text-blue-700 p'>
+      <a href="#">Company Overview & Capabilities</a>
+    </li>
+  </ul>
+{% endset %}
+
+{% block pageHeader %}
+  {% include '_partials/_page_header.twig' with {
+    title: 'SDS & Technical Documents',
+  } %}
+{% endblock %}
+
+{% block pageContent %}
+  <section class='flex flex-col gap-12 pt-[32px]'>
+    {% include "_blocks/_richText.twig" with {
+      blk: {
+        contents: libraryOne
+      }
+    } %}
+
+    {% include "_blocks/_richText.twig" with {
+      blk: {
+        contents: libraryTwo
+      }
+    } %}
+  </section>
+{% endblock %}
+
+{% block pageFooter %}
+  {% include '_partials/_cta.twig' %}
+{% endblock %}
