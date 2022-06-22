@@ -55,8 +55,10 @@
           file: "MicroC® 4000 Safety Data Sheet (SDS)",
           link: "#"
         }] %}
-        <li class="flex items-center before:content-['\2022'] before:px-4 font-bold text-blue-700">
-          <a href="{{x.link}}" class='font-normal text-[22px] leading-[36px]'>{{x.file}}</a>
+        <li>
+          <p>
+            <a href="{{x.link}}" class='text-blue-700'>{{x.file}}</a>
+          </p>
         </li>
         {% endfor %}
       </ul>
@@ -72,8 +74,10 @@
           file: "Company Overview & Capabilities",
           link: "#"
         }] %}
-        <li class="flex items-center before:content-['\2022'] before:px-4 font-bold text-blue-700">
-          <a href="{{x.link}}" class='font-normal text-[22px] leading-[36px]'>{{x.file}}</a>
+        <li>
+          <p>
+            <a href="{{x.link}}" class='text-blue-700'>{{x.file}}</a>
+          </p>
         </li>
         {% endfor %}
       </ul>

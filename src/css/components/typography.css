@@ -61,4 +61,9 @@
   .ol,
   .redactor ol {
   }
+  
+  .li,
+  .redactor li {
+    @apply flex items-center before:content-['\2022'] before:px-4 before:font-bold;
+  }
 }
