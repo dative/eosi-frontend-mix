@@ -7,81 +7,14 @@
 {% endblock %}
 
 {% block pageContent %}
-  <section id="sds-step-1" class='flex flex-col gap-3 divide-y divide-gray-300 redactor'>
-    <h1 class="pb-[6px] pt-[34px]">STEP 1</h1>
-    <div class="flex flex-row justify-between px-[33px] py-12 ">
-      <div class="bg-blue-500 max-w-[276px] h-[140px] p-4 rounded-md self-center">
-        <span class="text-white text-[22px]  leading-9">Complete form, then receive an email link to access the SDS library,</span>
-      </div>
-      <div class="flex flex-wrap justify-end gap-12">
-        {% for n in [{
-          subject: "Name",
-        },
-        {
-          subject: "Email",
-        },
-        {
-          subject: "Phone",
-        },
-        {
-          subject: "Company/Organization",
-        }] %}
-        <div class="flex flex-col ">
-          <label for="{{n.subject}}" class="text-base font-semibold leading-[18.8px]">{{n.subject}}</label>
-        <input type="text" name="{{n.subject}}" id="{{n.subject}}" class="w-[378px] rounded-[4px] bg-gray-100 border-gray-300">
-        </div>
-      {% endfor %}
-      </div>
-    </div>
-    <button  id="btn-documents" class="btn-outline-blue bg-blue-700 text-white self-center w-[209px]">Request Files</button>
-  </section>
-  <section  id="sds-step-2" class="flex-col hidden gap-12 redactor">
-    <div class="flex flex-col ">
-      <h3>Safety Data Sheets</h3>
-      <ul class="pt-4 ">
-        {% for x in [{
-          file: "MicroC® 1000 Safety Data Sheet (SDS)",
-          link: "#"
-        },
-        {
-          file: "MicroC® 2000 Safety Data Sheet (SDS)",
-          link: "#"
-        },
-        {
-          file: "MicroC® 3000 Safety Data Sheet (SDS)",
-          link: "#"
-        },
-        {
-          file: "MicroC® 4000 Safety Data Sheet (SDS)",
-          link: "#"
-        }] %}
-        <li>
-          <p>
-            <a href="{{x.link}}" class='text-blue-700'>{{x.file}}</a>
-          </p>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-    <div class="flex flex-col ">
-      <h3>Product & Company Information</h3>
-      <ul class="pt-4">
-        {% for x in [{
-          file: "MicroC® 1000 Product Brochure",
-          link: "#"
-        },
-        {
-          file: "Company Overview & Capabilities",
-          link: "#"
-        }] %}
-        <li>
-          <p>
-            <a href="{{x.link}}" class='text-blue-700'>{{x.file}}</a>
-          </p>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
+  <section class='pt-[32px] gap-12'>
+    {% include "_blocks/_richText.twig" with {
+      blk: {
+        contents: '<h2>STEP 1<hr></h2>'
+      }
+    } %}
+
+    {% include "_blocks/_sds_form.twig" %}
   </section>
 {% endblock %}
 
