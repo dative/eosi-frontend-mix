@@ -1,7 +1,7 @@
 <div class='flex flex-col md:flex-row gap-12 pt-[32px]'>
   <form action="" class='flex flex-col gap-[48px]'> <!-- set action -->
     <div class='grid md:grid-cols-3 gap-[30px] lg:gap-x-[48px] lg:gap-y-[40px] items-center'>
-      <div class="bg-blue-500 p-4 rounded-md col-span-1 row-span-2">
+      <div class="col-span-1 row-span-2 p-4 bg-blue-500 rounded-md">
         <p class="text-white text-[22px] leading-[36px] ">Complete form, then receive an email link to access the SDS library.</p>
       </div>
       {% for field in [
@@ -46,22 +46,21 @@
           id="{{ field.name }}"
           value="{{ field.value }}"
           {{ field.required ? 'required' : '' }}
-          {{ 
+          {{
             field.placeholder is defined and field.placeholder is not empty
             ? 'placeholder="' ~ field.placeholder ~ '"'
             : ''
           }}
-          class="block w-full rounded-md bg-gray-100 border-gray-300
-          selection:bg-gray-300 selection:bg-opacity-50 focus:border-gray-500 
-          focus:ring focus:ring-gray-500 focus:ring-opacity-50"/>            
+          class="block w-full bg-gray-100 border-gray-300 rounded-md selection:bg-gray-300 selection:bg-opacity-50 focus:border-gray-500 focus:ring focus:ring-gray-500 focus:ring-opacity-50"/>
         </label>
       {% endfor %}
     </div>
     <div class='text-center'>
       <button class="btn-solid-blue"
+      id="btn-documents"
         type="submit">
           Request Files
-      </button> 
+      </button>
     </div>
   </form>
 </div>
