@@ -66,11 +66,13 @@
 {% endblock %}
 
 {% block pageSidebar %}
-  {% include "_partials/_form.twig" with {
-    formFields: formFields,
-    buttonText: 'Request Case Study',
-    heading: 'Request Case Study'
-  } %}
+  <section class='lg:w-[calc(50%-15px)] mb-[96px]'>
+    {% include "_partials/_form.twig" with {
+      formFields: formFields,
+      buttonText: 'Request Case Study',
+      heading: 'Request Case Study'
+    } %}
+  </section>
 {% endblock %}
 
 {% block pageFooter %}
