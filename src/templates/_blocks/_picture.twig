@@ -1,14 +1,13 @@
-<figure>
-  <picture>
-    <source media="(min-width: 768px)"
-      srcset="https://www.w3schools.com/w3css/img_avatar3.png" />
-    <source media="(max-width: 767px)"
-      srcset="https://www.w3schools.com/w3css/img_avatar3.png" />
-    <img src="https://www.w3schools.com/w3css/img_avatar3.png"
-      alt="Avatar"
-      class="w3-circle w3-margin-top" />
-  </picture>
-  <figcaption>
-    Algal blooms caused by excessive Nitrogen.
-  </figcaption>
-</figure>
+{% if blk is defined and blk and blk.images is defined and blk.images %}
+	<figure>
+		<picture>
+			<source media="(max-width: 767px)" srcset="{{images[0]}}"/>
+			<img src="{{images[1]}}" alt="{{images[1]}}" class="w3-circle w3-margin-top rounded-md"/>
+		</picture>
+		<figcaption>
+			<span class="text-base italic font-normal leading-9 text-gray-700">
+				Algal blooms caused by excessive Nitrogen.
+			</span>
+		</figcaption>
+	</figure>
+{% endif %}

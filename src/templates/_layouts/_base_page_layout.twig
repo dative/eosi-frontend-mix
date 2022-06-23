@@ -2,25 +2,26 @@
 {% extends '_layouts/_generic_page_layout.twig' %}
 
 {% block content %}
-  <div class="mx-auto max-w-screen-desktop">
-    <div class="page-header-bg">
-      <div class="px-[15px]">
-        <div class="flex flex-col mx-auto max-w-screen-narrow">
-          <div>
-            {% block pageHeader %}{% endblock %}
-          </div>
-          <div>
-            <div class="flex flex-col gap-6 lg:flex-row desktop:gap-[132px]">
-              <div class="flex-1">
-                {% block pageContent %}{% endblock %}
-              </div>
-              {% block pageSidebar %}{% endblock %}{# <- this is an partial #}
-            </div>
-          </div>
-        </div>
-      </div>
-      {% block pageFooter %}{% endblock %}
-    </div>
-  </div>
+	<div class="mx-auto max-w-screen-desktop">
+		<div class="page-header-bg">
+			<div class="px-[15px]">
+				<div class="flex flex-col mx-auto max-w-screen-narrow">
+					<div>
+						{% block pageHeader %}{% endblock %}
+					</div>
+					<div>
+						<div class="flex flex-col gap-6 lg:flex-row lg:gap-[132px]">
+							<div class="flex-1">
+								{% block pageContent %}{% endblock %}
+							</div>
+							{% block pageSidebar %}{% endblock %}
+							{# <- this is an partial #}
+						</div>
+					</div>
+				</div>
+			</div>
+			{% block pageFooter %}{% endblock %}
+		</div>
+	</div>
 {% endblock %}
 {# prettier-ignore-end #}
