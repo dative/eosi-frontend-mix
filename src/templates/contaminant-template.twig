@@ -3,7 +3,7 @@
 {% block pageHeader %}
   {% include '_partials/_page_header.twig' with {
     title: 'Nitrogen Removal',
-    intro: '<h6 class="text-gray-700 text-2xl font-light lg:w-2/3">EOSi’s MicroC® products were originally developed to help wastewater treatment systems remove nitrogen.</h6>'
+    intro: '<h6 class="text-2xl font-light text-gray-700 lg:w-2/3">EOSi’s MicroC® products were originally developed to help wastewater treatment systems remove nitrogen.</h6>'
   } %}
 {% endblock %}
 
@@ -15,8 +15,12 @@
     } %}
 
     <div class="flex flex-col">
-      <img src="img/nitrogen.png" class="rounded-md" alt="Algal blooms caused by excessive Nitrogen in a river.">
-      <span class="font-normal text-gray-700 text-base leading-9 italic">Algal blooms caused by excessive Nitrogen.</span>
+      <img src="img/nitrogen.png"
+        class="rounded-md"
+        alt="Algal blooms caused by excessive Nitrogen in a river." />
+      <span class="text-base italic font-normal leading-9 text-gray-700">
+        Algal blooms caused by excessive Nitrogen.
+      </span>
     </div>
     {% include '_partials/_rich_text.twig' with {
       content: 'Nitrogen in drinking water also poses health risks to infants and pregnant women, particularly in agricultural areas where groundwater wells are the primary source of drinking water. Elevated concentrations of nitrogen in drinking water create nitrate compounds causing “blue baby syndrome” methemoglobinemia, a potentially fatal illness in which the nitrates reduce the oxygen-carrying capacity of the blood.'
@@ -26,20 +30,28 @@
       title: 'How EOSi Can Help',
       content: 'EOSi’s MicroC® products are uniquely suited for use in biological processes that help remove nitrogen from wastewater. With wastewater treatment plants increasingly required by state and federal regulatory agencies to reduce the amount of nitrogen discharged into sensitive watersheds, EOSi offers services that help customers assess, develop, implement and update their compliance strategy for nitrogen removal programs.',
       auxContent: 'MicroC® serves as a supplemental carbon source to support biological nitrogen removal (BNR) using denitrification to convert nitrates in the wastewater into harmless water, nitrogen gas (N2), and carbon dioxide gas (CO2). A biological process that takes place under anoxic conditions, denitrification occurs after aerobic bacteria converts ammonia to nitrate in a nitrification process. Often there is insufficient organic material to support denitrification, therefore a supplemental carbon source such as MicroC® is added to the process to convert nitrate to nitrogen gas.'
-
     } %}
-
   </div>
 {% endblock %}
 
 {% block pageSidebar %}
+<div class="flex flex-col gap-12">
   {% include '_partials/_sidebar_content.twig' with {
     heading: 'Case Study',
     coverPicture: 'img/facility.svg',
     description: 'EOSi Assists Meat Processing Facility Meet Permit Limits'
   } %}
+  <div class="flex flex-col redactor divide-y divide-gray-300 max-w-[276px]">
+    <h4>Resources</h4>
+	<div class="flex flex-col gap-6 ">
+    <a href="#" class="text-lg leading-[22px] text-blue-700 mt-6">MicroC® 1000 Product Sheet</a>
+    <a href="#" class="text-lg leading-[22px] text-blue-700">MicroC® 1000 Safety Data Sheet (SDS)</a>
+    <a href="#" class="text-lg leading-[22px] text-blue-700">MicroC® 1100 Safety Data Sheet (SDS)</a>
+  </div>
+</div>
 {% endblock %}
 
 {% block pageFooter %}
-  CTA goes here
+  {% include '_partials/_cta.twig' %}
 {% endblock %}
+
