@@ -4,37 +4,37 @@
   {
     heading: 'Beef Processing Facility',
     description: 'EOSi Assists Meat Processing Facility During Commissioning of a BNR Upgrade to Address Multiple Process Challenges and to Meet Compliance Goals.',
-    coverPicture: '/img/card-image.jpg',
+    coverPicture: '/img/cover-pc.jpg',
     link: '/case-study-form'
   },
   {
     heading: 'Beef Processing Facility',
     description: 'EOSi Assists Meat Processing Facility During Commissioning of a BNR Upgrade to Address Multiple Process Challenges and to Meet Compliance Goals.',
-    coverPicture: '/img/card-image.jpg',
+    coverPicture: '/img/cover-pc.jpg',
     link: '/case-study-form'
   },
   {
     heading: 'Beef Processing Facility',
     description: 'EOSi Assists Meat Processing Facility During Commissioning of a BNR Upgrade to Address Multiple Process Challenges and to Meet Compliance Goals.',
-    coverPicture: '/img/card-image.jpg',
+    coverPicture: '/img/cover-pc.jpg',
     link: '/case-study-form'
   },
   {
     heading: 'Beef Processing Facility',
     description: 'EOSi Assists Meat Processing Facility During Commissioning of a BNR Upgrade to Address Multiple Process Challenges and to Meet Compliance Goals.',
-    coverPicture: '/img/card-image.jpg',
+    coverPicture: '/img/cover-pc.jpg',
     link: '/case-study-form'
   },
   {
     heading: 'Beef Processing Facility',
-    coverPicture: '/img/card-image.jpg',
+    coverPicture: '/img/cover-pc.jpg',
     description: 'EOSi Assists Meat Processing Facility During Commissioning of a BNR Upgrade to Address Multiple Process Challenges and to Meet Compliance Goals.',
     link: '/case-study-form'
   },
 ] %}
 
 {% block pageHeader %}
-  {% include '_partials/_page_header.twig' with {
+	{% include '_partials/_page_header.twig' with {
     title: 'Case Studies',
     intro: 'See how we’ve helped facilities achieve permit compliance and optimize their nutrient removal process.'
   } %}
@@ -42,24 +42,23 @@
 
 {% block pageContent %}
 
-  <section class='flex flex-col gap-12'>
-    <div class='grid md:grid-cols-2 lg:grid-cols-3 gap-[30px]'>
-      {% for card in cards %}
-        {% include "_partials/_card.twig" with {
+	<section class='flex flex-col gap-12'>
+		<div class='grid md:grid-cols-2 lg:grid-cols-3 gap-[30px]'>
+			{% for card in cards %}
+				{% include "_partials/_card.twig" with {
           heading: card.heading,
           description: card.description,
           coverPicture: card.coverPicture,
           link: card.link
         } %}
-      {% endfor %}
-    </div>
-  </section>
-  
+			{% endfor %}
+		</div>
+	</section>
+
 {% endblock %}
 
-{% block pageSidebar %}
-{% endblock %}
+{% block pageSidebar %}{% endblock %}
 
 {% block pageFooter %}
-  {% include '_partials/_cta.twig' %}
+	{% include '_partials/_cta.twig' %}
 {% endblock %}
