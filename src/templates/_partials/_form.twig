@@ -1,53 +1,22 @@
-{% if formFields is defined and formFields and buttonText is defined and buttonText %}
-  <div class='bg-white px-[15px] py-[30px] md:px-[42px] rounded-md'>
-    <form method="post" action='' class="flex flex-col gap-6"> <!-- set action -->
+{% if formFields is defined and formFields %}
+  <div class='flex flex-col gap-6 bg-white px-[15px] py-[30px] md:px-[42px] rounded-md'>
+    {% if heading is defined and heading %}
       <div>
-        {% if heading is defined and heading %}
-          <h3 class="font-bold text-2xl lg:text-[32px] lg:leading-[42px] text-gray-900 text-center">
-            {{ heading }}
-          </h3>
-        {% endif %}
+        <h3 class="font-bold text-2xl lg:text-[32px] lg:leading-[42px] text-gray-900 text-center">
+          {{ heading }}
+        </h3>
       </div>
+    {% endif %}
+    <form method="post" action='' class="flex flex-col gap-6"> <!-- set action -->
       {% for field in formFields %}
-        <label for={{ field.name }} class="block">
-          {% if field.type != 'text-area' %}
-            <span class="text-base leading-[19px] lg:text-lg font-semibold">{{ field.label }}</span>
-            <input
-              type="{{ field.type }}"
-              name="{{ field.name }}"
-              id="{{ field.name }}"
-              value="{{ field.value }}"
-              {{ field.required ? 'required' : '' }}
-              {{ 
-                field.placeholder is defined and field.placeholder is not empty
-                ? 'placeholder="' ~ field.placeholder ~ '"'
-                : ''
-              }}
-              class="block w-full p-[9px] border border-gray-300 rounded-md 
-              selection:bg-gray-300 selection:bg-opacity-50 focus:border-gray-300 
-              focus:ring focus:ring-gray-300 focus:ring-opacity-50"/>
-            {% else %}
-              <span class="text-base leading-[19px] lg:text-lg font-semibold">{{ field.label }}</span>
-              <textarea 
-              name="{{ field.name }}"
-              id="{{ field.name }}"
-              rows='4'
-              {{ field.required ? 'required' : '' }}
-              {{ 
-                field.placeholder is defined and field.placeholder is not empty
-                ? 'placeholder="' ~ field.placeholder ~ '"'
-                : ''
-              }}
-              class="block w-full p-[9px] border border-gray-300 rounded-md 
-              selection:bg-gray-300 selection:bg-opacity-50 focus:border-gray-300 
-              focus:ring focus:ring-gray-300 focus:ring-opacity-50">{{ field.value }}</textarea>
-          {% endif %}
-        </label>
+        {% include "_fields/_" ~ field.type ~ ".twig" with {
+          field: field
+        } %}
       {% endfor %}
       <div class='text-center'>
         <button class="btn-solid"
           type="submit">
-            {{ buttonText }}
+            {{ buttonText|default('Submit Form') }}
         </button> 
       </div>
     </form>

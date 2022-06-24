@@ -1,0 +1,19 @@
+{% if
+  field is defined
+  and field
+  and field.type is defined
+  and field.type == 'tel' %}
+  <label for={{ field.name }} class="flex flex-col gap-[3px]">
+    {% if field.label is defined and field.label %}
+      <span class="font-semibold text-base leading-[19px]">{{ field.label }}</span>
+    {% endif %}
+    <input
+      type="{{ field.type }}"
+      name="{{ field.name }}"
+      value="{{ field.value }}"
+      {{ field.disabled ? 'disabled' : '' }}
+      {{ field.required ? 'required' : '' }}
+      class="block bg-white rounded border-gray-300 p-[9px] w-full
+      disabled:bg-gray-100 disabled:border-gray-300"/>
+  </label>
+{% endif %}
