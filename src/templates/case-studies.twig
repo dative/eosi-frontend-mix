@@ -4,30 +4,32 @@
   {
     heading: 'Beef Processing Facility',
     description: 'EOSi Assists Meat Processing Facility During Commissioning of a BNR Upgrade to Address Multiple Process Challenges and to Meet Compliance Goals.',
-    coverPicture: 'https://picsum.photos/id/0/378/275',
-    link: '#'
+    coverPicture: '/img/card-image.jpg',
+    link: '/case-study-form'
   },
   {
     heading: 'Beef Processing Facility',
     description: 'EOSi Assists Meat Processing Facility During Commissioning of a BNR Upgrade to Address Multiple Process Challenges and to Meet Compliance Goals.',
-    coverPicture: 'https://picsum.photos/id/0/378/275',
-    link: '#'
+    coverPicture: '/img/card-image.jpg',
+    link: '/case-study-form'
   },
   {
     heading: 'Beef Processing Facility',
     description: 'EOSi Assists Meat Processing Facility During Commissioning of a BNR Upgrade to Address Multiple Process Challenges and to Meet Compliance Goals.',
-    link: '#'
+    coverPicture: '/img/card-image.jpg',
+    link: '/case-study-form'
   },
   {
     heading: 'Beef Processing Facility',
     description: 'EOSi Assists Meat Processing Facility During Commissioning of a BNR Upgrade to Address Multiple Process Challenges and to Meet Compliance Goals.',
-    coverPicture: 'https://picsum.photos/id/0/378/275',
-    link: '#'
+    coverPicture: '/img/card-image.jpg',
+    link: '/case-study-form'
   },
   {
     heading: 'Beef Processing Facility',
+    coverPicture: '/img/card-image.jpg',
     description: 'EOSi Assists Meat Processing Facility During Commissioning of a BNR Upgrade to Address Multiple Process Challenges and to Meet Compliance Goals.',
-    link: '#'
+    link: '/case-study-form'
   },
 ] %}
 
@@ -41,11 +43,16 @@
 {% block pageContent %}
 
   <section class='flex flex-col gap-12'>
-    {% include "_blocks/_cards.twig" with {
-      blk: {
-        cards: cards
-      }
-    } %}
+    <div class='grid md:grid-cols-2 lg:grid-cols-3 gap-[30px]'>
+      {% for card in cards %}
+        {% include "_partials/_card.twig" with {
+          heading: card.heading,
+          description: card.description,
+          coverPicture: card.coverPicture,
+          link: card.link
+        } %}
+      {% endfor %}
+    </div>
   </section>
   
 {% endblock %}

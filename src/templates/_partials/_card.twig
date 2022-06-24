@@ -5,17 +5,19 @@
   and description
   and link is defined
   and link %}
-	<div>
-		<picture>
-			{% if coverPicture is defined and coverPicture %}
-				<img src={{ coverPicture }} alt="" class='w-full rounded-t-md'>
-			{% else %}
-				<img src="https://placeholder.pics/svg/378x275" alt="" class='w-full rounded-t-md'>
-			{% endif %}
-		</picture>
-		<a href={{ link }} class='flex flex-col gap-4 p-4 h-[200px] bg-white pb-[53px] rounded-b-md'>
-			<h4 class='!font-bold text-[20px] leading-[26px]'>{{ heading }}</h4>
-			<p class='font-normal !text-base !text-gray-700'>{{ description }}</p>
+	<div class="bg-white rounded-md">
+    <div class="w-full aspect-[378/275]">
+      <picture>
+        {% if coverPicture is defined and coverPicture %}
+          <img src={{ coverPicture }} alt="" class='object-cover w-full h-full rounded-t-md'>
+        {% else %}
+          <img src="https://placeholder.pics/svg/378x275" alt="" class='object-cover w-full h-full rounded-t-md'>
+        {% endif %}
+      </picture>
+    </div>
+		<a href={{ link }} class='flex flex-col gap-4 p-4 pb-[53px]'>
+			<h4 class='font-bold text-[20px] leading-[26px]'>{{ heading }}</h4>
+			<p class='text-base font-normal text-gray-700'>{{ description }}</p>
 		</a>
 	</div>
 {% endif %}
