@@ -18,7 +18,7 @@
 {% endset %}
 
 
-{% set images = ['img/river.png', 'img/riverBig.png'] %}
+{% set images = ['img/river.png']%}
 
 {% block pageHeader %}
 	{% include '_partials/_page_header.twig' with {
@@ -60,17 +60,13 @@
 	<div class="flex flex-col gap-12">
 		{% include '_partials/_sidebar_content.twig' with {
     heading: 'Case Study',
-    coverPicture: 'img/facility.svg',
+    coverPicture: 'img/facility.jpg',
     description: 'EOSi Assists Meat Processing Facility Meet Permit Limits'
   } %}
-		<div class="flex flex-col redactor divide-y divide-gray-300 max-w-[276px]">
-			<h4>Resources</h4>
-			<div class="flex flex-col gap-6 ">
-				<a href="#" class="text-lg leading-[22px] text-blue-700 mt-6">MicroC® 1000 Product Sheet</a>
-				<a href="#" class="text-lg leading-[22px] text-blue-700">MicroC® 1000 Safety Data Sheet (SDS)</a>
-				<a href="#" class="text-lg leading-[22px] text-blue-700">MicroC® 1100 Safety Data Sheet (SDS)</a>
-			</div>
-		</div>
+		{% include '_partials/_sidebar_links.twig' with {
+    heading: 'Resources',
+    links: []
+  } %}
 	{% endblock %}
 
 	{% block pageFooter %}
