@@ -34,7 +34,7 @@
       required: true
     },
     {
-      type: 'text-area',
+      type: 'textarea',
       name: 'message',
       label: 'Message',
       placeholder: 'Your Message',
@@ -42,11 +42,6 @@
       required: false
     }
 ] %}
-
-{% set pageIntro %}
-  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum.</p>
-  <p>Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
-{% endset %}
 
 {% block pageHeader %}
   {% include '_partials/_page_header.twig' with {
@@ -56,17 +51,16 @@
 {% endblock %}
 
 {% block pageContent %}
-  <section>
+  <section class='grid gap-8 lg:grid-cols-2 lg:gap-[132px]'>
     {% include "_blocks/_richText.twig" with {
       blk: {
-        contents: pageIntro
+        contents: '
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum.</p>
+          <p>Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+        '
       }
     } %}
-  </section>
-{% endblock %}
 
-{% block pageSidebar %}
-  <section class='lg:w-[calc(50%-15px)] mb-[96px]'>
     {% include "_partials/_form.twig" with {
       formFields: formFields,
       buttonText: 'Request Case Study',
