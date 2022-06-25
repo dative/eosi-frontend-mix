@@ -25,11 +25,14 @@
 
 {% block pageContent %}
   <section class='flex flex-col gap-8'>
-    {% include "_blocks/_posts.twig" with {
-      blk: {
-        posts: careersPosts
-      }
-    } %}
+    {% for post in careersPosts %}
+      {% include '_partials/_post_item.twig' with {
+        date: post.date,
+        title: post.title,
+        description: post.description,
+        link: post.link
+      } %}
+    {% endfor %}
   </section>
 {% endblock %}
 

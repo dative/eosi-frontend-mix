@@ -1,29 +1,29 @@
 {% extends '_layouts/_base_page_layout.twig' %}
 
-{% set news = [
+{% set newsPosts = [
   {
     date: 'Feb 20, 2022',
     title: 'Axius Water 2020 Sustainability Overview',
     description: 'Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.',
-    link: '#'
+    link: '/news-detail'
   },
   {
     date: 'Feb 20, 2022',
     title: 'Axius Water 2020 Sustainability Overview',
     description: 'Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.',
-    link: '#'
+    link: '/news-detail'
   },
   {
     date: 'Feb 20, 2022',
     title: 'Axius Water 2020 Sustainability Overview',
     description: 'Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.',
-    link: '#'
+    link: '/news-detail'
   },
   {
     date: 'Feb 20, 2022',
     title: 'Axius Water 2020 Sustainability Overview',
     description: 'Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.',
-    link: '#'
+    link: '/news-detail'
   }
 ] %}
 
@@ -36,11 +36,14 @@
 
 {% block pageContent %}
   <section class='flex flex-col gap-8'>
-    {% include "_blocks/_posts.twig" with {
-      blk: {
-        posts: news
-      }
-    } %}
+    {% for post in newsPosts %}
+      {% include '_partials/_post_item.twig' with {
+        date: post.date,
+        title: post.title,
+        description: post.description,
+        link: post.link
+      } %}
+    {% endfor %}
   </section>
 {% endblock %}
 
