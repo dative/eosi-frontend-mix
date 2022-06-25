@@ -1,13 +1,20 @@
-{% if blk is defined and blk and blk.images is defined and blk.images %}
-	<figure class="">
-		<picture>
-			<source media="(max-width: 767px)" srcset="img/river.png"/>
-			<img src="img/river.png" alt="River" class="w-full rounded-md"/>
-		</picture>
-		<figcaption>
-			<span class="text-base italic font-normal leading-9 text-gray-700">
-				Algal blooms caused by excessive Nitrogen.
-			</span>
-		</figcaption>
-	</figure>
+{% if blk is defined and blk and blk.image is defined and blk.image %}
+  <figure class="">
+    <picture>
+      {# <source media="(max-width: 767px)" srcset="{{ images[0] }}" /> #}
+      <img src="{{ blk.image }}"
+        alt="{{ blk.image }}"
+        class="w-full rounded-md" />
+    </picture>
+    {% if condition %}
+    
+    {% endif %}
+      {% if blk.text is defined and blk.text %}
+      <figcaption>  
+        <span class="text-base italic font-normal leading-9 text-gray-700">
+          {{ blk.text }}
+        </span>
+      </figcaption>
+      {% endif %}
+  </figure>
 {% endif %}

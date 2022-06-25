@@ -1,8 +1,10 @@
-<div class="flex flex-col redactor divide-y divide-gray-300 ">
-	<h4>{{heading}}</h4>
-	<div class="flex flex-col gap-6 ">
-		<a href="#" class="text-lg leading-[22px] text-blue-700 mt-6">MicroC® 1000 Product Sheet</a>
-		<a href="#" class="text-lg leading-[22px] text-blue-700">MicroC® 1000 Safety Data Sheet (SDS)</a>
-		<a href="#" class="text-lg leading-[22px] text-blue-700">MicroC® 1100 Safety Data Sheet (SDS)</a>
+{% if heading is defined and heading and links is defined and links %}
+	<div class="flex flex-col redactor divide-y divide-gray-300 ">
+		<h4 class='pb-[2px]'>{{ heading }}</h4>
+		<div class="flex flex-col gap-6 pt-6">
+			{% for link in links %}
+				<a href={{link.url}} class="text-lg leading-[22px] text-blue-700">{{ link.text }}</a>		
+			{% endfor %}
+		</div>
 	</div>
-</div>
+{% endif %}

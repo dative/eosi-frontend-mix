@@ -10,7 +10,7 @@
 
     {% include "_partials/_heading.twig" with {
       text: title,
-      htag: 'h1'
+      htag: htag|default('h1')
     } %}
 
     {% if intro is defined and intro %}

@@ -31,7 +31,7 @@
 {% block pageContent %}
 	<section>
 		<div class="mt-8">
-			<div class='grid lg:grid-cols-3 gap-[30px]'>
+			<div class='grid md:grid-cols-2 lg:grid-cols-3 gap-[30px]'>
 				{% for card in cards %}
 					{% include "_partials/_card.twig" with {
           heading: card.heading,

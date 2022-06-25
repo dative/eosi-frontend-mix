@@ -9,9 +9,7 @@
     <div class="w-full aspect-[378/275]">
       <picture>
         {% if coverPicture is defined and coverPicture %}
-          <img src={{ coverPicture }} alt="" class='object-cover w-full h-full rounded-t-md'>
-        {% else %}
-          <img src="https://placeholder.pics/svg/378x275" alt="" class='object-cover w-full h-full rounded-t-md'>
+          <img src={{ coverPicture|default('https://placeholder.pics/svg/378x275') }} alt="" class='object-cover w-full h-full rounded-t-md'>
         {% endif %}
       </picture>
     </div>

@@ -2,9 +2,7 @@
   <div class='flex flex-col sm:flex-row lg:items-center gap-[30px]'>
     <picture>
       {% if profilePicture is defined and profilePicture %}
-        <img src={{ profilePicture }} class='rounded-lg max-w-none'/>
-        {% else %}
-        <img src='https://placeholder.pics/svg/348x342px' class='rounded-lg max-w-none'/>
+        <img src={{ profilePicture|default('https://placeholder.pics/svg/348x342px') }} class='rounded-lg max-w-none'/>
       {% endif %}
     </picture>
     <div class='redactor flex flex-col gap-2'>

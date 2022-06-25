@@ -1,16 +1,16 @@
 {% if
   heading is defined
   and heading
-  and description is defined
-  and description
+  and content is defined
+  and content
  %}
 	<div class="flex flex-col redactor divide-y divide-gray-300 gap-[2px]">
     <h4>{{ heading }}</h4>
-    <a href="#" class="flex flex-col gap-[15px]">
+    <a href='{{ content.url }}' class="flex flex-col gap-[15px]">
       <picture class="mt-6">
         <img src={{ coverPicture|default("https://placeholder.pics/svg/276x188") }} alt="" class='w-full rounded-t-md'>
       </picture>
-      <span class="text-lg leading-[22px] text-blue-700">{{description}}</span>
+      <span class="text-lg leading-[22px] text-blue-700">{{content.text}}</span>
     </a>
   </div>
 {% endif %}
