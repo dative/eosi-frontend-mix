@@ -42,14 +42,10 @@
 				{% endfor %}
 			</div>
 
-			{# TODO: refacto into a partial #}
-			<div class="flex flex-col lg:flex-row  gap-[30px] py-[60px]">
-				<div class="flex self-center">{% include "_partials/_leaf_icon.svg.twig" %}</div>
-				<div class="flex flex-col gap-2 text-center lg:text-start">
-					<h4 class="text-2xl leading-[31px] font-semibold">And we’re eco-sustainable!</h4>
-					<p class='text-lg leading-[26px] font-normal text-gray-700'>MicroC products enjoy a USDA BioPreferred designation — biodegradable and “green” by-products and co-products mostly derived from abundant and renewable resources produced in the USA and from other industries.</p>
-				</div>
-			</div>
+			{% include "_partials/_product_card.twig" with {
+        heading: 'And we’re eco-sustainable!',
+        text: 'MicroC products enjoy a USDA BioPreferred designation — biodegradable and “green” by-products and co-products mostly derived from abundant and renewable resources produced in the USA and from other industries.'
+      } %}
 
 			<div class="grid grid-cols-1 gap-[60px] lg:grid-cols-2 lg:gap-x-[30px]">
 				{% include "_partials/_product_grid_item.twig" with {

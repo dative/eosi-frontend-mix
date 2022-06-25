@@ -1,0 +1,10 @@
+
+{% if heading is defined and heading and text is defined and text %}
+  <div class="flex flex-col lg:flex-row  gap-[30px] py-[60px]">
+    <div class="flex self-center">{% include "_partials/_leaf_icon.svg.twig" %}</div>
+    <div class="flex flex-col gap-2 text-center lg:text-start">
+      <h4 class="text-2xl leading-[31px] font-semibold">{{ heading }}</h4>
+      <p class='text-lg leading-[26px] font-normal text-gray-700'>{{ text }}</p>
+    </div>
+  </div>
+{% endif %}

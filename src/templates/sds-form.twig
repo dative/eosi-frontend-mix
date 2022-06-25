@@ -1,92 +1,76 @@
 {% extends '_layouts/_base_page_layout.twig' %}
 
+  {% set formFields = [
+    {
+    type: 'text',
+    name: 'name',
+    label: 'Name',
+    required: true
+    },
+    {
+    type: 'tel',
+    name: 'phone',
+    label: 'Phone',
+    required: true
+    },
+    {
+    type: 'email',
+    name: 'email',
+    label: 'Email',
+    required: true
+    },
+    {
+    type: 'text',
+    name: 'company',
+    label: 'Company',
+    required: true
+    },
+  ] %}
+
 {% block pageHeader %}
-	{% include '_partials/_page_header.twig' with {
-    title: 'SDS & Technical Documents',
+
+  {% include '_partials/_page_header.twig' with {
+  title: 'SDS & Technical Documents',
   } %}
+
 {% endblock %}
 
 {% block pageContent %}
-	<section id="sds-step-1" class='flex flex-col gap-3 divide-y divide-gray-300 redactor'>
-		<h1 class="pb-[6px] pt-[34px]">STEP 1</h1>
-		<div class="flex flex-col lg:flex-row justify-between px-[33px] py-12 ">
-			<div class="bg-blue-500 max-w-[276px] h-[140px] p-4 rounded-md self-center">
-				<span class="text-white text-[22px]  leading-9">Complete form, then receive an email link to access the SDS library.</span>
-			</div>
-			<div class="flex flex-wrap justify-center lg:justify-end gap-12">
-				{% for n in [{
-          subject: "Name",
-        },
-        {
-          subject: "Email",
-        },
-        {
-          subject: "Phone",
-        },
-        {
-          subject: "Company/Organization",
-        }] %}
-					<div class="flex flex-col ">
-						<label for="{{n.subject}}" class="text-base font-semibold leading-[18.8px]">{{n.subject}}</label>
-						<input type="text" name="{{n.subject}}" id="{{n.subject}}" class="lg:w-[378px] w-[290px] rounded-[4px] bg-gray-100 border-gray-300 ">
-					</div>
-				{% endfor %}
-			</div>
-		</div>
-		<button id="btn-documents" class="btn-outline-blue bg-blue-700 text-white self-center w-[209px]">Request Files</button>
-	</section>
-	<section id="sds-step-2" class="flex-col hidden gap-12 redactor">
-		<div class="flex flex-col ">
-			<h3>Safety Data Sheets</h3>
-			<ul class="pt-4 ">
-				{% for x in [{
-          file: "MicroC® 1000 Safety Data Sheet (SDS)",
-          link: "#"
-        },
-        {
-          file: "MicroC® 2000 Safety Data Sheet (SDS)",
-          link: "#"
-        },
-        {
-          file: "MicroC® 3000 Safety Data Sheet (SDS)",
-          link: "#"
-        },
-        {
-          file: "MicroC® 4000 Safety Data Sheet (SDS)",
-          link: "#"
-        }] %}
-					<li class="flex">
-						<p class="text-blue-700">
-							<a href="{{x.link}}">{{x.file}}</a>
-						</p>
-					</li>
+<section  class='flex flex-col gap-3 divide-y divide-gray-300 redactor '>
+   <div class="mt-8 h1">Step 1</div>
+   <div>
+      <div class="max-w-[1112px] mx-auto py-12 w-full">
+         <div class="flex flex-col gap-12 lg:flex-row">
+            <div class="lg:max-w-[276px] pt-4">
+               <div class="p-4 text-white bg-blue-500 rounded-md text-[22px] leading-9 ">Complete form, then receive an email link to access the SDS library.</div>
+            </div>
+            <div class="w-full">
+              <form method="post" action='' class="grid lg:grid-cols-2 gap-x-12 gap-y-10">
+                <!-- set action -->
+                {% for field in formFields %}
+                {% include "_fields/_" ~ field.type ~ ".twig" with {
+                field: field
+                } %}
+                {% endfor %}
+                <div class='text-center'>
+                   <button class="btn-solid-blue"
+                      type="submit">
+                      <span class="text-lg font-semibold leading-[21.15px]">
+                        Request Files
+                      </span>
+                   </button>
+                </div>
+             </form>
+          </div>
+         </div>
+      </div>
+   </div>
+</section>
 
-				{% endfor %}
-			</ul>
-		</div>
-		<div class="flex flex-col ">
-			<h3>Product & Company Information</h3>
-			<ul class="pt-4 list-disc">
-				{% for x in [{
-          file: "MicroC® 1000 Product Brochure",
-          link: "#"
-        },
-        {
-          file: "Company Overview & Capabilities",
-          link: "#"
-        }] %}
-					<li class="flex">
-						<p class="text-blue-700">
-							<a href="{{x.link}}">{{x.file}}</a>
-						</p>
-					</li>
-
-				{% endfor %}
-			</ul>
-		</div>
-	</section>
 {% endblock %}
 
 {% block pageFooter %}
-	{% include '_partials/_cta.twig' %}
+
+{% include '_partials/_cta.twig' %}
+
 {% endblock %}

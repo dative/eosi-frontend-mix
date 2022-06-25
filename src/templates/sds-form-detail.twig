@@ -1,0 +1,54 @@
+{% extends '_layouts/_base_page_layout.twig' %}
+
+{% block pageHeader %}
+  {% include '_partials/_page_header.twig' with {
+    title: 'SDS & Technical Documents'
+  } %}
+{% endblock %}
+
+{% block pageContent %}
+  <section class="flex flex-col gap-12 redactor">
+    <div class="flex flex-col">
+      <h3 class="h3">
+        Safety Data Sheets
+      </h3>
+      <ul class="pt-4">
+        {% for product in [
+          { file: 'MicroC® 1000 Safety Data Sheet (SDS)', link: '#' },
+          { file: 'MicroC® 2000 Safety Data Sheet (SDS)', link: '#' },
+          { file: 'MicroC® 3000 Safety Data Sheet (SDS)', link: '#' },
+          { file: 'MicroC® 4000 Safety Data Sheet (SDS)', link: '#' }
+        ] %}
+          <li class="flex">
+            <a class="text-blue-700 text-[19px] lg:text-[22px] leading-9"
+              href="{{ product.link }}">
+              {{ product.file }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="flex flex-col">
+      <h3 class="h3">
+        Product & Company Information
+      </h3>
+      <ul class="pt-4 list-disc">
+        {% for product in [
+          { file: 'MicroC® 1000 Product Brochure', link: '#' },
+          { file: 'Company Overview & Capabilities', link: '#' }
+        ] %}
+          <li class="flex">
+            <a class="text-blue-700 text-[19px] lg:text-[22px] leading-9"
+              href="{{ product.link }}">
+              {{ product.file }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+{% endblock %}
+
+{% block pageFooter %}
+  {% include '_partials/_cta.twig' %}
+{% endblock %}
