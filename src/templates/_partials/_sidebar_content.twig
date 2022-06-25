@@ -4,17 +4,13 @@
   and description is defined
   and description
  %}
-	<div class="flex flex-col redactor divide-y divide-gray-300 max-w-[276px] gap-[2px]">
+	<div class="flex flex-col redactor divide-y divide-gray-300 gap-[2px]">
     <h4>{{ heading }}</h4>
-	<div class="flex flex-col gap-[15px]">
-    <picture class="mt-6">
-			{% if coverPicture is defined and coverPicture %}
-				<img src={{ coverPicture }} alt="" class='w-full rounded-t-md'>
-			{% else %}
-				<img src="https://placeholder.pics/svg/378x275" alt="" class='w-full rounded-t-md'>
-			{% endif %}
-		</picture>
-    <span class="text-lg leading-[22px] text-blue-700">{{description}}</span>
+    <a href="#" class="flex flex-col gap-[15px]">
+      <picture class="mt-6">
+        <img src={{ coverPicture|default("https://placeholder.pics/svg/276x188") }} alt="" class='w-full rounded-t-md'>
+      </picture>
+      <span class="text-lg leading-[22px] text-blue-700">{{description}}</span>
+    </a>
   </div>
-</div>
 {% endif %}

@@ -14,7 +14,11 @@
 							<div class="flex-1">
 								{% block pageContent %}{% endblock %}
 							</div>
-							{% block pageSidebar %}{% endblock %}
+							{% if block('pageSidebar')|length %}
+								<div class='lg:max-w-[276px]'>
+									{% block pageSidebar %}{% endblock %}
+								</div>
+							{% endif %}
 							{# <- this is an partial #}
 						</div>
 					</div>
