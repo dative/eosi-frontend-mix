@@ -1,0 +1,59 @@
+{% extends '_layouts/_base_page_layout.twig' %}
+
+{% block pageHeader %}
+	{% include '_partials/_page_header.twig' with {
+    title: 'Industrial Markets',
+    intro: '<h6 class="text-2xl font-light text-gray-700 lg:w-2/3">EOSi helps clients cost-effectively meet their contaminant removal and compliance objectives across an array of industrial markets.</h6>'
+  } %}
+
+	<div class="flex flex-col md:flex-row bg-white rounded-md w-full divide-y md:divide-x divide-gray-100 redactor text-center mb-[92px]">
+		{% for item in [{
+      name: 'Meat & Poultry Processing'
+    },{
+      name: 'Power
+      Generation'
+    },{
+      name: 'Petroleum Refineries'
+    },{
+      name: 'Mining and Extraction'
+    },{
+      name: 'Landfill Operators'
+    }
+    ] %}
+			<h5 class="p-[28px] flex-1">{{item.name}}</h5>
+		{% endfor %}
+	{% endblock %}
+
+	{% block pageContent %}
+
+		<div class="flex flex-col gap-[30px]">
+			{% include "_blocks/_richText.twig" with {
+      blk: {
+        contents: '
+          <h2>Meat and Poultry Processing</h2>
+          <p>EOSi’s MicroC® products are uniquely suited for use in biological processes that help remove nitrogen from wastewater. With wastewater treatment plants increasingly required by state and federal regulatory agencies to reduce the amount of nitrogen discharged into sensitive watersheds, EOSi offers services that help customers assess, develop, implement and update their compliance strategy for nitrogen removal programs.</p>
+          <p>EOSi’s goal is to maximize nitrogen and phosphorus removal from existing biological treatment systems, preferably through operational improvements instead of capital investments. If a processing plant needs to install new or upgrade existing wastewater treatment systems, EOSi can perform bench-scale treatability studies, modeling and simulations, and equipment selection and procurement for the supplemental carbon program. </p>
+        '
+      }
+    } %}
+		</div>
+	{% endblock %}
+
+	{% block pageSidebar %}
+		<div class='lg:max-w-[276px]'>
+			<div class="flex flex-col gap-12">
+				{% include '_partials/_sidebar_content.twig' with {
+        heading: 'Case Study',
+        coverPicture: 'img/facility.jpg',
+        content: {
+            text: 'EOSi Assists Meat Processing Facility Meet Permit Limits',
+            url: '#'
+          }
+      } %}
+			</div>
+		</div>
+	{% endblock %}
+
+	{% block pageFooter %}
+		{% include '_partials/_cta.twig' %}
+	{% endblock %}
