@@ -2,8 +2,146 @@
 
 {% block content %}
   <section>
-    <h1>
-      Index
-    </h1>
+    <div class="p-4 lg:py-[30px] desktop:px-0 bg-gray-100">
+      <div class="flex flex-col gap-8 mx-auto max-w-screen-desktop md:flex-row md:items-center md:gap-8">
+        <h1 class="max-w-[520px] md:max-w-[320px] lg:max-w-[378px] mx-auto md:mx-0 text-3xl font-bold leading-10 text-center md:font-normal md:text-left md:text-5xl md:leading-[52px] desktop:text-6xl desktop:leading-[66px]">
+          Never worry about your <span class="md:font-bold">
+            wastewater permit
+          </span>
+          limits again.
+        </h1>
+
+        {# 3 : 2 #}
+        <div class="-mb-[33.333333vw] md:mb-0 md:flex-1">
+          <div class="relative w-full aspect-[3/2] lg:aspect-[5/3] rounded-md shadow-card overflow-hidden">
+            <picture class="">
+              <source media="(min-width: 768px)"
+                srcset="/img/water-plant-cover-720w.jpg" />
+              <source media="(min-width: 1px)"
+                srcset="/img/water-plant-cover-375w.jpg" />
+              <img data-src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Cpath fill='%23C1CFDE' d='M0 0h3v2H0z'/%3E%3C/svg%3E"
+                class="w-full"
+                loading="lazy"
+                alt="Water Plant Aerial Photograph" />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="z-0 pt-[calc(33.333333vw-18px)] text-white bg-blue-700 md:pt-0">
+      <div class="px-4 py-8">
+        <div class="flex flex-col items-center gap-4 mx-auto md:max-w-3xl">
+          <p class="text-2xl text-center md:text-[28px] md:leading-[36px]">
+            Empowering Clean Water® by enhancing the biological removal of harmful
+            nutrients in wastewater.
+          </p>
+          <button type="button"
+            data-video="https://www.youtube.com/watch?v=DKb9LRCXLDY"
+            class="btn-base hover:btn-solid flex gap-2 h-[57px]">
+            {% include '_partials/_play_button.svg.twig' with {
+              class: 'w-6 h-6'
+            } %}
+            <span class="text-base font-bold leading-9">See How it Works</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+
+  <section>
+    <div class="px-4 bg-white py-9">
+      <div class="flex flex-col gap-8 pb-10 mx-auto max-w-screen-desktop">
+        <div class="grid items-center grid-flow-row gap-4 md:grid-col-2 md:grid-flow-col-dense md:items-start md:gap-x-8">
+          <div class="md:row-span-2">
+            {% include '_partials/_computer_monitor.svg.twig' %}
+          </div>
+          <div class="max-w-[224px] md:max-w-none">
+            <p class="text-lg md:text-[44px] md:leading-[48px] md:max-w-[726px]">
+              Are you having <strong>issues</strong> with your wastewater treatment
+              process?
+            </p>
+          </div>
+          <div class="col-span-2 md:columns-auto">
+            <ul class="flex flex-col divide-y max-w-[225px] mx-auto text-center divide-gray-300 text-gray-700 text-lg md:flex-row md:divide-y-0 md:max-w-[888px] md:text-left md:gap-4 md:mx-0 md:justify-between">
+              {% for li in [
+                '<strong>Inconsistent</strong> nutrient removal levels.',
+                '<strong>Inaccurate</strong> supplemental carbon dosing.',
+                '<strong>Inadequate</strong> delivery and product quality.'
+              ] %}
+                <li class="px-1 py-5 md:px-0 md:flex-1 md:max-w-[276px] md:text-[22px]">
+                  {{ li|raw }}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution -->
+
+  <section>
+    <div class="px-4 bg-gray-100">
+      <div class="flex flex-col items-center mx-auto max-w-screen-desktop">
+        <h2 class="inline-flex items-center justify-center py-4 mx-auto text-2xl font-bold leading-9 text-white bg-blue-700 rounded-full -mt-[34px] px-14 mb-10">
+          Let’s fix it.
+        </h2>
+        <div class="relative flex flex-col w-full lg:flex-row lg:justify-between lg:items-center lg:py-24">
+          <div class="relative flex flex-col max-w-3xl gap-12 lg:w-[684px]">
+            <div class="relative">
+              <p class="relative text-3xl font-bold leading-10 text-center lg:font-normal lg:text-left lg:text-[44px] lg:leading-[48px] z-50">
+                <strong class="relative font-bold">Take better control</strong> of
+                your biological and contaminant removal process.
+              </p>
+            </div>
+            <div class="mx-auto">
+              <ul class="flex flex-col gap-12">
+                {% for li in [
+                  {
+                    title: 'Achieve Compliance',
+                    contents: 'Leverage our experience in ever-changing permit requirements and regulations.'
+                  },
+                  {
+                    title: 'Minimize Operational Risk',
+                    contents: 'Reduce your risk with consistent on-time delivery and premium product quality.'
+                  },
+                  {
+                    title: 'Optimize Removal Costs',
+                    contents: 'Take the guesswork out of dosing and cut cost-per-pound of nutrients removed.'
+                  }
+                ] %}
+                  <li class="flex flex-row gap-6">
+                    <div class="li-check"></div>
+                    <div class="flex flex-col gap-2">
+                      <p class="text-2xl font-bold leading-9 lg:text-[32px] lg:leading-[42px] lg:font-extrabold">
+                        {{ li.title }}
+                      </p>
+                      <p class="text-lg leading-6 text-gray-700 lg:text-[22px] lg:leading-[36px]">
+                        {{ li.contents }}
+                      </p>
+                    </div>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+
+          <div class="relative my-16 max-w-[480px] mx-auto before:dots-pattern before:content-[''] before:hidden md:before:block after:hidden md:after:block before:absolute before:w-24 before:h-24 before:-top-[30px] md:before:-left-[30px] before:z-0 after:dots-pattern after:content-[''] after:absolute after:w-24 after:h-24 after:-bottom-[30px] after:z-0 after:right-0 lg:w-[480px] md:after:-right-[30px] lg:my-0">
+            <div class="relative z-50 flex flex-col items-center h-full gap-[15px] bg-white rounded-lg p-[15px] md:p-[30px]">
+              <h3 class='font-bold text-[44px] leading-[48px]'>We can help.</h3>
+              <p class='text-center p'>Learn how you can optimize your removal process reliably and cost-effectively.</p>
+              <footer class>
+                <a href="#" class='btn-solid'>Schedule a Call</a>
+                <p class='font-bold text-base leading-[48px] text-center'>Or Call 866-642-7621</p>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 {% endblock %}
