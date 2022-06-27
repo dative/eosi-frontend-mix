@@ -1,9 +1,107 @@
-{% extends '_layouts/_generic_page_layout.twig' %}
+{% extends '_layouts/_base_page_layout.twig' %}
 
-{% block content %}
-  <section>
-    <h1>
-      Product Template
-    </h1>
+{% set accordions = [
+  {
+    heading: 'Non- Hazardous',
+    contents: '
+      <ul>
+        <li>Eliminates flammability and toxicity concerns of traditional chemicals such as methanol</li>
+        <li>Provides capital cost savings vs. installation of flammable liquid storage and feed system</li>
+        <li>Non-hazardous product enables rapid and flexible deployment of carbon augmentation solutions </li>
+      </ul>
+    '
+  },
+  {
+    heading: 'Performance Advantages',
+    contents: '
+      <ul>
+        <li>Eliminates flammability and toxicity concerns of traditional chemicals such as methanol</li>
+        <li>Provides capital cost savings vs. installation of flammable liquid storage and feed system</li>
+        <li>Non-hazardous product enables rapid and flexible deployment of carbon augmentation solutions </li>
+      </ul>
+    '
+  },
+  {
+    heading: 'Environmentally Sustainable',
+    contents: '
+      <ul>
+        <li>Eliminates flammability and toxicity concerns of traditional chemicals such as methanol</li>
+        <li>Provides capital cost savings vs. installation of flammable liquid storage and feed system</li>
+        <li>Non-hazardous product enables rapid and flexible deployment of carbon augmentation solutions </li>
+      </ul>
+    '
+  }
+] %}
+
+{% block pageHeader %}
+  {% include '_partials/_page_header.twig' with {
+    title: 'MicroC® 1000',
+    intro: 'The MicroC® 1000 series is a proprietary carbohydrate-based and non-hazardous product for nitrate removal or BOD supplementation.'
+  } %}
+{% endblock %}
+
+{% block pageContent %}
+  <section class='flex flex-col gap-8'>
+      {% include "_blocks/_richText.twig" with {
+      blk: {
+        contents: '
+          <h2>Product Overview</h2>
+          <p>MicroC® 1000 series products are best suited for small municipal, package/decentralized and commercial/residential wastewater treatment facilities that require a safe, clean and consistent carbon source for nitrate removal and/or BOD supplementation.</p>
+          <p>Delivering consistent and superior quality, MicroC® 1000 products undergo rigorous end-to-end quality control, offer consistent chemical oxygen demand (COD) values, and suffer no product degradation during long-term storage.</p>
+        '
+      }
+    } %}
+
+    {% include "_blocks/_richText.twig" with {
+      blk: {
+        contents: '
+          <h2>Benefits</h2>
+        '
+      }
+    } %}
+
+    {% include "_blocks/_accordions.twig" with {
+      blk: {
+        accordions: accordions
+      }
+    } %}
   </section>
+{% endblock %}
+
+
+{% block pageSidebar %}
+  <div class='lg:max-w-[276px]'>
+    <div class="flex flex-col gap-12">
+      {% include '_partials/_sidebar_content.twig' with {
+        heading: 'Case Study',
+        coverPicture: 'img/facility.jpg',
+        content: {
+            text: 'EOSi Assists Meat Processing Facility Meet Permit Limits',
+            url: '#'
+          }
+      } %}
+
+      {% include '_partials/_sidebar_links.twig' with {
+        heading: 'Resources',
+        links: [
+          {
+            text: 'MicroC® 1000 Product Sheet',
+            url: '#'
+          },
+          {
+            text: 'MicroC® 1000 Safety Data Sheet (SDS)',
+            url: '#'
+          },
+          {
+            text: 'MicroC® 1100 Safety Data Sheet (SDS)',
+            url: '#'
+          }
+        ]
+      } %}
+    </div>
+  </div>
+{% endblock %}
+
+{% block pageFooter %}
+  {% include "_partials/_cta.twig" %}
 {% endblock %}
