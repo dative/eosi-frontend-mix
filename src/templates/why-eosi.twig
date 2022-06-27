@@ -1,9 +1,104 @@
-{% extends '_layouts/_generic_page_layout.twig' %}
+{% extends '_layouts/_base_page_layout.twig' %}
 
-{% block content %}
-  <section>
-    <h1>
-      Why EOSi Page
-    </h1>
-  </section>
+{% set accordions = [
+  {
+    heading: 'Multiple Packaging Options',
+    contents: '<p> EOSi helps potential new customers evaluate how MicroC® can improve compliance and/or reduce costs. EOSi reviews facility data, assesses treatment processes, conducts bench-scale and field testing, and models how the process will respond to MicroC. Identifying the appropriate MicroC® product, EOSi experts estimate product usage to achieve compliance, and evaluate cost savings prior to MicroC deployment. </p>
+    <p>EOSi assists out-of-compliance customers and those experiencing unusually high operational costs due to a process upset. Helping to identify near-term operational fixes that might improve the situation quickly, EOSi recommends long-term operational or capital solutions to address the root cause of the process upset. EOSi also provides program management services to help treatment plants procure and deploy temporary MicroC storage and feed equipment, identify sampling and monitoring points, and install inline analyzers and real-time monitors as needed. </p>'  },
+  {
+    heading: 'On-time Delivery',
+    contents: '<p> EOSi helps potential new customers evaluate how MicroC® can improve compliance and/or reduce costs. EOSi reviews facility data, assesses treatment processes, conducts bench-scale and field testing, and models how the process will respond to MicroC. Identifying the appropriate MicroC® product, EOSi experts estimate product usage to achieve compliance, and evaluate cost savings prior to MicroC deployment. </p>
+    <p>EOSi assists out-of-compliance customers and those experiencing unusually high operational costs due to a process upset. Helping to identify near-term operational fixes that might improve the situation quickly, EOSi recommends long-term operational or capital solutions to address the root cause of the process upset. EOSi also provides program management services to help treatment plants procure and deploy temporary MicroC storage and feed equipment, identify sampling and monitoring points, and install inline analyzers and real-time monitors as needed. </p>'  },
+  {
+    heading: 'Quality Assurance & Control',
+    contents: '<p> EOSi helps potential new customers evaluate how MicroC® can improve compliance and/or reduce costs. EOSi reviews facility data, assesses treatment processes, conducts bench-scale and field testing, and models how the process will respond to MicroC. Identifying the appropriate MicroC® product, EOSi experts estimate product usage to achieve compliance, and evaluate cost savings prior to MicroC deployment. </p>
+    <p>EOSi assists out-of-compliance customers and those experiencing unusually high operational costs due to a process upset. Helping to identify near-term operational fixes that might improve the situation quickly, EOSi recommends long-term operational or capital solutions to address the root cause of the process upset. EOSi also provides program management services to help treatment plants procure and deploy temporary MicroC storage and feed equipment, identify sampling and monitoring points, and install inline analyzers and real-time monitors as needed. </p>'  },
+
+] %}
+
+{% set cards = [
+  {
+    heading: 'Empowering Clean Water',
+    description: 'Environmental Operating Solutions, Inc. (EOSi) provides biological contaminant-removal solutions, supplies, and technical services empowering water and wastewater treatment plant operators in their mission to deliver treated effluent water free of harmful nutrient pollution and chemical contaminants.',
+    coverPicture: '/img/empowering.jpg',
+    link: '#',
+  },
+  {
+    heading: 'Deep Technical Expertise ',
+    description: 'EOSi is the trusted partner, solution provider, reliable supplier, and technical expert to hundreds of water and wastewater treatment operators across North America benefiting from our technical leadership and our passion for understanding and meeting their changing needs.',
+    coverPicture: '/img/technical.jpg',
+    link: '#'
+
+  },
+  {
+    heading: 'Dedicated to Sustainability',
+    description: ' EOSi’s renewable and non-hazardous product chemistries, full-service process monitoring and control programs, and on-time delivery and no-disruption supply chain are backed by our world-class team of technical experts — each personally dedicated to protecting and preserving our global water resources by reducing the threat of nutrient pollution.',
+    coverPicture: '/img/sustainability.jpg',
+    link: '#'
+  }
+] %}
+
+
+{% block pageHeader %}
+	{% include '_partials/_page_header.twig' with {
+    title: 'Why Partner with EOSi?',
+    intro: '<h6 class="text-2xl font-light text-gray-700 lg:w-2/3">We’ve helped more than 550 customers just like yours to protect and preserve our global water resources. Read our 2021 Sustainability Report.</h6>'
+  } %}
+
+{% endblock %}
+
+{% block pageContent %}
+	<div class="flex flex-col gap-8">
+
+		<div class="flex flex-col lg:flex-row gap-[30px]">
+
+			<div class="lg:w-1/2 flex flex-col gap-[30px]">
+				{% include "_blocks/_richText.twig" with {
+      blk: {
+        contents: '
+          <h2>Delivering the right product — right on time.</h2>
+          <p>With more than 20 facilities across North America, you can order your MicroC products confident that your shipment will arrive complete, on schedule, formulated as specified, and priced as originally agreed — without exceptions and excuses.</p>
+        '
+      }
+    } %}
+				{% include "_blocks/_accordions.twig" with {
+      blk: {
+        accordions: accordions
+      }
+    } %}
+			</div>
+			<div>
+				{% include "_blocks/_picture.twig" with {
+    blk: {
+      image: 'img/whyEosi.jpg',
+    }
+  } %}
+			</div>
+		</div>
+
+		<div class="flex flex-col gap-12 ">
+			<div class="text-[44px]">
+				<strong>Your</strong>
+				mission – is
+				<strong>our</strong>
+				mission.
+			</div>
+			<div class='grid md:grid-cols-2 lg:grid-cols-3 gap-[30px]'>
+				{% for card in cards %}
+					{% include "_partials/_card.twig" with {
+            heading: card.heading,
+            description: card.description,
+            coverPicture: card.coverPicture,
+            link: card.link
+          } %}
+				{% endfor %}
+			</div>
+			<button class="btn-outline-blue w-fit self-center py-4 px-8">See Our 2021 Sustainability Report</button>
+
+		</div>
+	</div>
+{% endblock %}
+
+{% block pageFooter %}
+	{% include '_partials/_cta.twig' %}
 {% endblock %}
