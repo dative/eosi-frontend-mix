@@ -14,10 +14,13 @@
         } %}
       {% endfor %}
       <div class='text-center'>
-        <button class="btn-solid"
+        <button class="btn-solid min-w-[200px]"
           type="submit">
             {{ buttonText|default('Submit Form') }}
         </button> 
+        {% if textBottom is defined and textBottom %}
+          <p class='font-bold text-base leading-[48px] text-gray-900'>{{ textBottom }}</p>
+        {% endif %}
       </div>
     </form>
   </div>

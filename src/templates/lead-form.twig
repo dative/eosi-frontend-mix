@@ -1,9 +1,95 @@
-{% extends '_layouts/_generic_page_layout.twig' %}
+{% extends '_layouts/_base_page_layout.twig' %}
 
-{% block content %}
-  <section>
-    <h1>
-      Lead Form Page
-    </h1>
+{% set formFields = [
+    {
+      type: 'text',
+      name: 'name',
+      label: 'Name',
+      placeholder: 'Your Name',
+      value: 'Joe Smith',
+      required: true
+    },
+    {
+      type: 'tel',
+      name: 'phone',
+      label: 'Phone',
+      placeholder: '555-444-3333',
+      value: '555-444-3333',
+      required: true
+    },
+    {
+      type: 'email',
+      name: 'email',
+      label: 'Email',
+      placeholder: 'your@email.com',
+      value: 'info@mail.com',
+      required: true
+    },
+    {
+      type: 'text',
+      name: 'organization',
+      label: 'Organization',
+      placeholder: 'Acme, Inc.',
+      value: 'Acme, Inc.',
+      required: true
+    },
+    {
+      type: 'textarea',
+      name: 'message',
+      label: 'Message',
+      placeholder: 'Your Message',
+      value: 'Your Message',
+      required: false
+    }
+] %}
+
+{% block pageHeader %}
+  {% include '_partials/_page_header.twig' with {
+    title: 'Schedule a Call',
+    intro: 'Learn how our proven process can help your meet and maintain your wastewater treatment goals consistently and cost-effectively.'
+  } %}
+{% endblock %}
+
+{% block pageContent %}
+  <section class='grid gap-8 lg:grid-cols-2 lg:gap-[132px] pt-[32px] pb-[96px]'>
+    <div class="mx-auto">
+      <ul class="flex flex-col gap-12">
+        {% for li in [
+          {
+            title: 'Achieve Compliance',
+            contents: 'Leverage our experience in ever-changing permit requirements and regulations.'
+          },
+          {
+            title: 'Minimize Operational Risk',
+            contents: 'Reduce your risk with consistent on-time delivery and premium product quality.'
+          },
+          {
+            title: 'Optimize Removal Costs',
+            contents: 'Take the guesswork out of dosing and cut cost-per-pound of nutrients removed.'
+          }
+        ] %}
+          <li class="flex flex-row gap-6">
+            <div class="li-check"></div>
+            <div class="flex flex-col gap-2">
+              <p class="text-2xl font-bold leading-9 lg:text-[32px] lg:leading-[42px] lg:font-extrabold">
+                {{ li.title }}
+              </p>
+              <p class="text-lg leading-6 text-gray-700 lg:text-[22px] lg:leading-[36px]">
+                {{ li.contents }}
+              </p>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>  
+
+    {% include "_partials/_form.twig" with {
+      buttonText: 'Send',
+      textBottom: 'Or Call 866-642-7621',
+      formFields: formFields,
+    } %}
   </section>
+{% endblock %}
+
+{% block pageFooter %}
 {% endblock %}
