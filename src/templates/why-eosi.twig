@@ -49,32 +49,62 @@
 
 {% block pageContent %}
 	<div class="flex flex-col gap-8">
-
 		<div class="flex flex-col lg:flex-row gap-[30px]">
-
-			<div class="lg:w-1/2 flex flex-col gap-[30px]">
+			<div class="flex-1 flex flex-col gap-[30px]">
 				{% include "_blocks/_richText.twig" with {
-      blk: {
-        contents: '
-          <h2>Delivering the right product — right on time.</h2>
-          <p>With more than 20 facilities across North America, you can order your MicroC products confident that your shipment will arrive complete, on schedule, formulated as specified, and priced as originally agreed — without exceptions and excuses.</p>
-        '
-      }
-    } %}
+          blk: {
+            contents: '
+              <h2>Delivering the right product — right on time.</h2>
+              <p>With more than 20 facilities across North America, you can order your MicroC products confident that your shipment will arrive complete, on schedule, formulated as specified, and priced as originally agreed — without exceptions and excuses.</p>
+            '
+          }
+        } %}
 				{% include "_blocks/_accordions.twig" with {
-      blk: {
-        accordions: accordions
-      }
-    } %}
+          blk: {
+            accordions: accordions
+          }
+        } %}
 			</div>
-			<div>
+      <div class='flex-1'>
 				{% include "_blocks/_picture.twig" with {
-    blk: {
-      image: 'img/whyEosi.jpg',
-    }
-  } %}
+          blk: {
+            image: 'img/whyEosi.jpg',
+          }
+        } %}
 			</div>
 		</div>
+
+    <div class='flex flex-col md:items-center lg:flex-row gap-[30px]'>
+      <div class='relative flex justify-center items-center flex-1'>
+        {% include "_partials/_cover-map.svg.twig" %}
+        <a href="#" class='btn-solid-blue absolute'>See Our Locations</a>
+      </div>
+      <div class='redactor flex flex-col md:grid md:grid-cols-2 gap-[30px] flex-1'>
+        {% for item in [
+          {
+            heading: '15+',
+            text: 'Years of manufacturing and distributing.'
+          },
+          {
+            heading: '20+',
+            text: 'Locations across North America to serve you quickly.'
+          },
+          {
+            heading: '180+',
+            text: 'Million Pounds of MicroC products delivered.'
+          },
+          {
+            heading: '10,000+',
+            text: 'Customer deliveries worldwide.'
+          }
+        ] %}
+          <div>
+            <h3>{{item.heading}}</h3>
+            <p>{{item.text}}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
 
 		<div class="flex flex-col gap-12 ">
 			<div class="text-[44px]">
