@@ -1,9 +1,16 @@
-{% extends '_layouts/_generic_page_layout.twig' %}
+{% extends '_layouts/_base_page_layout.twig' %}
 
-{% block content %}
-  <section>
-    <h1>
-      Interactive Map Page
-    </h1>
-  </section>
+{% block pageHeader %}
+	{% include '_partials/_page_header.twig' with {
+    title: 'Our Locations',
+    intro: 'Our 20+ locations are strategically located across the United States to ensure prompt delivery, whenever you need it.'
+  } %}
+{% endblock %}
+
+{% block pageContent %}{% endblock %}
+
+{% block pageSidebar %}{% endblock %}
+
+{% block pageFooter %}
+  {% include '_partials/_cta.twig' %}
 {% endblock %}
