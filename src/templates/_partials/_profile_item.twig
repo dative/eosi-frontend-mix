@@ -8,7 +8,7 @@
 %}
   <div class='flex flex-col sm:flex-row gap-[30px]'>
     <picture>
-      <img class='aspect-1 min-w-[160px] rounded-lg' src={{ profilePicture|default('./img/profile_placeholder.png') }} class='rounded-lg max-w-none'/>
+      <img class='aspect-1 max-w-[160px] rounded-lg' src={{ profilePicture|default('./img/profile_placeholder.png') }} class='rounded-lg max-w-none'/>
     </picture>
     <div class='flex flex-col gap-2 redactor'>
       <h4>{{ fullName }}</h4>
