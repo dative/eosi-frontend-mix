@@ -1,12 +1,18 @@
-{% if fullName is defined and fullName and description is defined and description %}
-  <div class='flex flex-col sm:flex-row lg:items-center gap-[30px]'>
+{% if 
+  fullName is defined 
+  and fullName 
+  and occupatio is defined 
+  and occupatio 
+  and description is defined 
+  and description 
+%}
+  <div class='flex flex-col sm:flex-row gap-[30px]'>
     <picture>
-      {% if profilePicture is defined and profilePicture %}
-        <img src={{ profilePicture|default('https://placeholder.pics/svg/348x342px') }} class='rounded-lg max-w-none'/>
-      {% endif %}
+      <img class='aspect-1 min-w-[160px] rounded-lg' src={{ profilePicture|default('./img/profile_placeholder.png') }} class='rounded-lg max-w-none'/>
     </picture>
     <div class='flex flex-col gap-2 redactor'>
       <h4>{{ fullName }}</h4>
+      <span class='font-normal text-base leading-[19px] text-gray-500'>{{ occupatio }}</span>
       <p class="text-gray-700">{{ description }}</p>
     </div>
   </div>

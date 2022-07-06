@@ -1,15 +1,9 @@
 {% if blk is defined and blk and blk.profiles is defined and blk.profiles %}
   <div class="flex flex-col gap-12">
-    {% if blk.heading is defined and blk.heading %}
-      {% include '_partials/_heading.twig' with {
-        text: blk.heading,
-        htag: 'h3'
-      } %}
-    {% endif %}
-
     {% for profile in blk.profiles %}
       {% include '_partials/_profile_item.twig' with {
         fullName: profile.fullName,
+        occupatio: profile.occupatio,
         description: profile.description,
         profilePicture: profile.profilePicture
       } %}
