@@ -5,7 +5,7 @@ header#site-header {
     @apply will-change-transform transition-transform duration-200 ease-linear;
 
     &--pinned {
-      @apply translate-y-0 shadow-nav-menu;
+      @apply translate-y-0 shadow-nav-menu duration-700 ease-out;
 
       &.headroom--top {
         @apply shadow-none;
