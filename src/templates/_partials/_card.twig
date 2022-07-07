@@ -3,8 +3,7 @@
   and heading
   and description is defined
   and description
-  and link is defined
-  and link %}
+ %}
 	<div class="bg-white rounded-md ">
 		<div class="w-full aspect-[378/275] ">
 			<picture>
@@ -13,9 +12,16 @@
 				{% endif %}
 			</picture>
 		</div>
-		<a href={{ link }} class='flex flex-col gap-4 p-4 pb-[53px]'>
-			<h4 class='font-bold text-[20px] leading-[26px]'>{{ heading }}</h4>
-			<p class='text-base font-normal text-gray-700'>{{ description }}</p>
-		</a>
+		{% if link is defined and link %}
+			<a href={{ link }} class='flex flex-col gap-4 p-4 pb-[53px]'>
+				<h4 class='font-bold text-[20px] leading-[26px]'>{{ heading }}</h4>
+				<p class='text-base font-normal text-gray-700'>{{ description }}</p>
+			</a>
+			{% else %}
+				<div class='flex flex-col gap-4 p-4 pb-[53px]'>
+					<h4 class='font-bold text-[20px] leading-[26px]'>{{ heading }}</h4>
+					<p class='text-base font-normal text-gray-700'>{{ description }}</p>
+				</div>
+		{% endif %}
 	</div>
 {% endif %}
