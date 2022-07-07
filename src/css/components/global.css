@@ -10,6 +10,10 @@
  *
  */
 
+html {
+  @apply scroll-smooth;
+}
+
 body {
   @apply bg-gray-300;
 }
