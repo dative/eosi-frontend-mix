@@ -12,6 +12,18 @@
       @apply flex items-center gap-x-[10px] list-none bg-gray-100 cursor-pointer;
     }
 
+    p,
+    a,
+    span,
+    li,
+    .accordion-content {
+      @apply font-normal text-[18px] leading-[30px];
+    }
+
+    .accordion-content ul li {
+      @apply flex before:content-['\2022'] before:px-4 before:font-bold;
+    }
+
     summary::before {
       content: '';
       @apply w-5 h-5 flex-none;
