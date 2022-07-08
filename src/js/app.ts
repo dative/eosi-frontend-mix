@@ -1,6 +1,7 @@
 import Headroom from 'headroom.js'
 import { toggleControlButton, TOGGLE_CLOSE_EVENT } from './toggle-control-button'
 import './video-modal.ts'
+import './numbers-count-up.ts'
 
 toggleControlButton();
 
