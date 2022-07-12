@@ -37,20 +37,19 @@
         consistently
       </strong> and <strong class="font-extrabold">effectively.</strong>
     </h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
-      {% for card in cards %}
-        {% include '_partials/_card.twig' with {
-          heading: card.heading,
-          description: card.description,
-          coverPicture: card.coverPicture,
-          link: card.link
-        } %}
-      {% endfor %}
+    <div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
+        {% for card in cards %}
+          {% include '_partials/_card.twig' with {
+            heading: card.heading,
+            description: card.description,
+            coverPicture: card.coverPicture,
+            link: card.link
+          } %}
+        {% endfor %}
+      </div>
     </div>
   </section>
-{% endblock %}
-
-{% block pageSidebar %}
 {% endblock %}
 
 {% block pageFooter %}
