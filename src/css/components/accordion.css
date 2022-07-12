@@ -35,4 +35,7 @@
     @apply rotate-45;
   }
 
+  details summary::-webkit-details-marker {
+    @apply hidden;
+  }
 }
